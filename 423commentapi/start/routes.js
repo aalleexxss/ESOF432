@@ -1,4 +1,4 @@
-'use strict'
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,8 +12,10 @@
 | http://adonisjs.com/docs/4.1/routing
 |
 */
+'use strict'
 
-/** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.on('/').render('home')
+Route.on('/about').render('about')
+Route.on('/contact').render('contact')
