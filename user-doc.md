@@ -11,5 +11,4 @@ This api can be used as any other api, however more specific details will be add
 when they are added to our api.
 
 ## Reporting Bugs
-To report a bug, simply email aalleexxdss@gmail.com explaining 
-the bug you encountered with as much detail possible.
+To report a bug, create an issue on github on this repository. You can also find it [here.](https://github.com/aalleexxss/ESOF432/issues)
