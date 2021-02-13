@@ -1,21 +1,8 @@
-
-
-/*
-|--------------------------------------------------------------------------
-| Routes
-|--------------------------------------------------------------------------
-|
-| Http routes are entry points to your web application. You can create
-| routes for different URL's and bind Controller actions to them.
-|
-| A complete guide on routing is available here.
-| http://adonisjs.com/docs/4.1/routing
-|
-*/
 'use strict'
 
 const Route = use('Route')
 
 Route.on('/').render('home')
-Route.on('/about').render('about')
-Route.on('/contact').render('contact')
+Route.on('/video').render('video')
+Route.on('/image').render('image')
+Route.on('/text').render('text')

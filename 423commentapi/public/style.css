@@ -90,3 +90,52 @@ p {
     transform: none;
   }
 }
+
+body {
+  background: #ffffff;
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: #333333 solid 2px;
+  background: #808080;
+  color: #ffffff;
+
+}
+
+@media (min-width: 48em) {
+  .container {
+    max-width: 46rem;
+  }
+}
+
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 3rem;
+}
+
+li {
+  margin: auto;
+}
+
+a:hover {
+  color: aqua;
+}
+
+a:active {
+  color: yellow;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+.btn-primary {
+  display: block;
+  margin-left: auto;
+  margin-right: 440px;
+  width: 10%
+}
