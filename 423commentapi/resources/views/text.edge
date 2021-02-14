@@ -25,10 +25,44 @@
 
 </form>
 <br>
-<textarea rows="4" cols="50" name="comment" form="usrform" class="center">
+<textarea rows="4" cols="50" name="comment" form="usrform" class="center" onfocus="this.value=''">
 Enter comment here...
 </textarea>
 
 <button class = "btn btn-primary" type="post">Post</button>
+
+<button class="open-button" onclick="openForm()"></button>
+
+<div class="form-popup" id="myForm">
+  <form action="" class="form-container"> <!-- #Need to add action once submit is clicked -->
+
+    <label for="description"><b>Let us know why you are reporting this comment:</b></label>
+    <textarea type="text" placeholder="Description" name="description" required class="textarea2"></textarea>
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+</script>
+<button class = "btn btn-secondary" type="button" onClick="onClick()">Like Button</button>
+<p>Likes: <a id="likes">0</a></p>
+
+<script>
+  var likes = 0;
+
+  function onClick() {
+    likes += 1;
+    document.getElementById("likes").innerHTML = likes;
+  };
+</script>
 
 </body>
