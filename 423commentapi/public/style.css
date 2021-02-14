@@ -74,7 +74,9 @@ a {
 }
 
 p {
-  margin: 0.83rem 0;
+  margin-left: 780px;
+  margin-right: 700px;
+  margin-top: -30px;
 }
 
 @keyframes slideUp {
@@ -136,6 +138,100 @@ a:active {
 .btn-primary {
   display: block;
   margin-left: auto;
-  margin-right: 440px;
-  width: 10%
+  margin-right: 623px;
+  width: 10%;
+
+}
+
+.report {
+  margin-left: 619px;
+  margin-right: 623px;
+  margin-top: -36px;
+  width: 5%;
+}
+
+.center2 {
+  margin: auto;
+  width: 60%;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-secondary {
+  background-image: url(https://i.ibb.co/YPHLss9/2529722222.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 26px;
+  width: 20px;
+  border: none;
+  margin-left: 740px;
+  margin-right: 623px;
+  margin-top: -33px;
+}
+
+.open-button {
+  background-image: url(https://i.ibb.co/MsNjgCz/1234.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 35px;
+  width: 88px;
+  margin-left: 619px;
+  margin-right: 623px;
+  margin-top: -36px;
+  border: 0;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.textarea2 {
+  height: 100px;
+  width: 100%;
+  padding: 15px;
+  margin: 0px 0 20px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
 }
