@@ -1,0 +1,34 @@
+@layout('main')
+
+@section('content')
+<body>
+
+<img src = "https://cms.qz.com/wp-content/uploads/2016/09/loading.gif?quality=75&strip=all&w=1600&h=900" class="img">
+
+<h5 style="padding-bottom: 10px;"> Comments: </h5>
+@if(old('notification'))
+<div class="alert alert-success">
+  {{ old('notification') }}
+</div>
+@endif
+<ul>
+  @each(comment in comments)
+  <li class="list-group-item"><a>{{ comment.body }}</a></li>
+  @endeach
+</ul>
+
+<h1>Add New Comment</h1>
+<form action="/comments" method="POST">
+  {{ csrfField() }}
+  <div class="form-group">
+    <textarea name="body" class="form-control" placeholder="Enter comment">{{ old('body', '') }}</textarea>
+    {{ elIf('<span class="text-danger">$self</span>', getErrorFor('body'), hasErrorFor('body')) }}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+<form action="{{ '/comments/' + '?_method=DELETE' }}" method="POST">
+  {{ csrfField() }}
+    <button type="submit" class="btn btn-danger">Delete all comments</button>
+</form>
+@endsection
