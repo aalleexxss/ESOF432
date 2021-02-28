@@ -5,9 +5,9 @@ const Schema = use('Schema')
 
 class CommentsSchema extends Schema {
   up () {
-    this.create('comments', (table) => {
+    this.alter('comments', (table) => {
+      table.string('body')
       table.increments()
-      table.string('comment')
       table.timestamps()
     })
   }

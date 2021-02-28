@@ -32,7 +32,8 @@ module.exports = {
   sqlite: {
     client: 'sqlite3',
     connection: {
-      filename: Helpers.databasePath(`${Env.get('DB_DATABASE', 'development')}.sqlite`)
+      filename: Helpers.databasePath('commentdb.sqlite')
+      //filename: Helpers.databasePath('C:\\Users\\saylo\\Documents\\GitHub\\ESOF432\\423commentapi\\database\\commentdb.sqlite')
     },
     useNullAsDefault: true
   },

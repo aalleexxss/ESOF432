@@ -1,30 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   {{ style('https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css') }}
-  <title>Adonis 4.0 Blog</title>
+  <title>Group 4 Comments</title>
 </head>
 <body>
+  @include('navbar')
   <div class="container">
    @!section('content')
   </div>
-
-  <header>
-
-    <div class="header clearfix">
-      <nav>
-        <ul class="nav nav-pills pull-xs-right">
-          <li class="nav-item"><a href="/" class="nav-link">Documentation</a></li>
-          <li class="nav-item"><a href="/video" class="nav-link">Video Post</a></li>
-          <li class="nav-item"><a href="/image" class="nav-link">Image Post</a></li>
-          <li class="nav-item"><a href="/text" class="nav-link">Text Post</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
   {{ script('https://code.jquery.com/jquery-3.2.1.slim.min.js') }}
 
