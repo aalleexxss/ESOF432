@@ -8,6 +8,9 @@ class PostsSchema extends Schema {
     this.create('posts', (table) => {
       table.increments()
       table.timestamps()
+      table.uuid('post-id')
+      table.integer('post_type').notNullable()
+      table.string('post_content').notNullable()
     })
   }
 
