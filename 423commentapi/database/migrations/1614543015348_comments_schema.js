@@ -5,8 +5,13 @@ const Schema = use('Schema')
 
 class CommentsSchema extends Schema {
   up () {
-    this.alter('comments', (table) => {
+    this.create('comments', (table) => {
       table.string('body')
+      table.uuid('post-id')
+      table.uuid('comment-id')
+      table.uuid('parent-id')
+      table.integer('likes')
+      table.uuid('poster')
       table.increments()
       table.timestamps()
     })

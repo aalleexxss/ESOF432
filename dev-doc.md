@@ -6,6 +6,8 @@ git clone https://github.com/aalleexxss/ESOF432.git
 ```
 ## Directory Structure
 Our directory structure is TBD. Currently we just have everything in the root folder.
+## UML Diagram and Design Decisions
+![UML diagram](https://github.com/aalleexxss/ESOF432/blob/Alex-Branch/UML-diagram.png)
 ## Running Software
 To run the software you're going to need to use `adonis serve --dev` when in the directory with our AdonisJS installation.
 ## Testing the Software
