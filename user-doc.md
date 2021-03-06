@@ -6,8 +6,8 @@ to an existing website. It handles comment database management, creating and del
 and other comment related functionality. 
 
 ## Using our API:
-**install adonis.js:**\
-to install adonis using npm, use `npm i @adonisjs/cli`. If npm is not installed, click [here](https://www.npmjs.com/get-npm). \
+**Install adonis.js:**\
+In order to install adonis using npm, use `npm i @adonisjs/cli`. If npm is not installed, click [here](https://www.npmjs.com/get-npm). \
 **starting adonis.js:**\
 clone [this repository](https://github.com/aalleexxss/ESOF432.git). Move into the /423commentapi directory and run `adonis serve --dev`. The api is now up and running.
 
