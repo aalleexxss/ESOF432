@@ -11,7 +11,7 @@ Our directory structure is TBD. Currently we just have everything in the root fo
 ## Running Software
 To run the software you're going to need to use `adonis serve --dev` when in the directory with our AdonisJS installation.
 ## Testing the Software
-We have not implemented any testing yet.
+Functional test can be found in ````423commentapi/test/functional````. To run test open a terminal and run ````adonis test````.
 ## Automated Build and Test
 We do not think that this is very applicable to our project but could be mistaken.
 ## Releasing a Version
