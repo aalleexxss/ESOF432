@@ -7,9 +7,9 @@ class CommentsSchema extends Schema {
   up () {
     this.create('comments', (table) => {
       table.string('body')
-      table.uuid('post-id')
-      table.uuid('comment-id')
-      table.uuid('parent-id')
+      table.uuid('post_id')
+      table.uuid('comment_id')
+      table.uuid('parent_id')
       table.integer('likes')
       table.uuid('poster')
       table.increments()
