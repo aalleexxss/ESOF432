@@ -18,8 +18,8 @@ const providers = [
   '@adonisjs/cors/providers/CorsProvider',
   '@adonisjs/shield/providers/ShieldProvider',
   '@adonisjs/session/providers/SessionProvider',
-  '@adonisjs/auth/providers/AuthProvider',	
-  'adonis-swagger/providers/SwaggerProvider'
+  '@adonisjs/auth/providers/AuthProvider',
+  'adonis-swagger/providers/SwaggerProvider',
   '@adonisjs/validator/providers/ValidatorProvider'
 ]
 
