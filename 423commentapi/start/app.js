@@ -37,6 +37,11 @@ const aceProviders = [
   '@adonisjs/vow-browser/providers/VowBrowserProvider'
 ]
 
+const providers = [
+  ...
+    'adonis-swagger/providers/SwaggerProvider'
+]
+
 /*
 |--------------------------------------------------------------------------
 | Aliases
