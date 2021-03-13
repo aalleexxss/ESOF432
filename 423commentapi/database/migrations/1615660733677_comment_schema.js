@@ -5,7 +5,6 @@ const Schema = use('Schema')
 
 class CommentsSchema extends Schema {
   up () {
-<<<<<<< HEAD:423commentapi/database/migrations/1615660733677_comment_schema.js
     this.create('commentdb', (table) => {
       table.string('body')
       table.uuid('post_id')
