@@ -34,6 +34,11 @@ const aceProviders = [
   '@adonisjs/lucid/providers/MigrationsProvider'
 ]
 
+const providers = [
+  ...
+    'adonis-swagger/providers/SwaggerProvider'
+]
+
 /*
 |--------------------------------------------------------------------------
 | Aliases
