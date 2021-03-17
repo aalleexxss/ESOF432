@@ -1,6 +1,7 @@
 'use strict'
 
 //Model
+const uuid = require("uuid");
 const Comment = use('App/Models/Comment')
 
 class CommentController{
@@ -23,6 +24,7 @@ class CommentController{
     const comment = new Comment();
 
     comment.body = request.input('body')
+    comment.comment_id = uuid();
 
     await comment.save()
 
