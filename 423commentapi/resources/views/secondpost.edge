@@ -22,7 +22,7 @@
 <h1>Add New Comment</h1>
 <form action="/comments" method="POST">
   {{ csrfField() }}
-  <input type="hidden" name="post-id" value="1">
+  <input type="hidden" name="post-id" value="2">
   <div class="form-group">
     <textarea name="body" class="form-control" placeholder="Enter comment">{{ old('body', '') }}</textarea>
     {{ elIf('<span class="text-danger">$self</span>', getErrorFor('body'), hasErrorFor('body')) }}

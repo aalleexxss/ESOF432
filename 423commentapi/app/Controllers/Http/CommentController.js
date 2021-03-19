@@ -25,6 +25,8 @@ class CommentController{
 
     comment.body = request.input('body')
     comment.comment_id = uuid();
+    comment.post_id = request.input('post-id')
+
 
     await comment.save()
 
@@ -59,6 +61,12 @@ class CommentController{
 
     return response.redirect('/comments')
 
+
+  }
+
+  async deleteOne({ params, session, response}) {
+
+    const deleted = await Comment.where({ comment_id: params }).delete();
 
   }
 
