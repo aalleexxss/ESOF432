@@ -10,6 +10,7 @@ class CommentController{
 
     const comments = await Comment.all();
 
+
     return view.render('comments.index', {
       title: 'Comment Data: ',
       comments: comments.toJSON()
