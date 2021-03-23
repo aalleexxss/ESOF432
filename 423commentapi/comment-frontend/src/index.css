@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,600");
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+
+body {
+  background-color: #f5f8fa;
+  color: #212529;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
+}
