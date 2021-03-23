@@ -9,8 +9,4 @@ tmp
 .env
 
 # The development sqlite file
-
-
-# VSCode & Webstorm history directories
-.history
-.idea
+database/development.sqlite
