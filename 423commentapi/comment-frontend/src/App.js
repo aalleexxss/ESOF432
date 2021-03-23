@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
-import Comment from './Event';
-import AddEvent from './AddEvent';
+
+import Comment from './Comment';
+import AddEvent from './AddComment';
 import ApiService from './apiService';
 
 class App extends Component {
@@ -42,6 +43,13 @@ class App extends Component {
       })
   }
 
+  addLike = (id) => {
+    this.apiService.addLike(id)
+      .then(() => {
+        this.fetchComments()
+      })
+  }
+
 	toggleShowCreateCommentForm = () => {
 		this.setState({
 			showCreateCommentForm: !this.state.showCreateCommentForm
@@ -61,10 +69,12 @@ class App extends Component {
 					</button>
 				</div>
 				{this.state.showCreateCommentForm && <AddEvent storeComment={this.storeComment} />}
+        {this.state.comments.map((comment) => <Comment addLike={this.addLike} comment={comment} key={comment.id} />)}
 				{this.state.comments.map((comment) => <Comment deleteComment={this.deleteComment} comment={comment} key={comment.id} />)}
 			</div>
 		);
 	}
+
 }
 
 export default App;

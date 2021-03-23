@@ -18,4 +18,8 @@ export default class ApiService {
   deleteComment = async (id) => {
     return this.http.delete(`/comments/${id}`)
   }
+
+  addLike = async (id) => {
+    return this.http.put(`/comments/${id}`)
+  }
 }

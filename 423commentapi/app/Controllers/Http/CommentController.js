@@ -11,18 +11,6 @@ class CommentController{
     return response.status(200).json({ comments })
   }
 
-  // async store({ request, response, session }) {
-  //   const comment = new Comment();
-  //
-  //   comment.body = request.input('body')
-  //
-  //   await comment.save()
-  //
-  //   session.flash({ notification: 'Comment submitted!'})
-  //
-  //   return response.status(201).json({comment})
-  //
-  // }
 
   async store ({ request, response }) {
     const {
@@ -53,42 +41,30 @@ class CommentController{
     return response.status(201).json({ comment })
   }
 
-  // Need to implement edit
-
-  // async edit({ view }) {
-  //   return view.render('comment.add')
-  // }
   async destroy ({  params, response }) {
     const comments = await Comment.find(params.id)
 
     await comments.delete()
 
     return response.status(200).json({
-      message: 'Event deleted successfully.'
+      message: 'Comment deleted successfully.'
     })
   }
-  // async destroy({ params, session, response }) {
-  //
-  //   var i = 0;
-  //
-  //   for(i = 0; i < 1000; i++){
-  //
-  //     const comment = await Comment.find(i)
-  //
-  //     if( comment != null){
-  //
-  //       await comment.delete()
-  //
-  //     }
-  //   }
-  //
-  //   //session.flash({ notification: 'Comment(s) deleted!'})
-  //
-  //   return response.status(200).json({
-  //     message: 'Comments deleted successfully.'
-  //   })
-  //
-  // }
+
+  async like ({  params, response, request }) {
+
+    const likes = request.input("likes")
+
+    const comments = await Comment.find(params.id)
+
+    comments.likes  = comments.likes + 1
+
+    await comments.save()
+
+    return response.status(200).json({
+      message: 'Like added!'
+    })
+  }
 
 
 }

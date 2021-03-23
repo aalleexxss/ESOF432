@@ -25,3 +25,5 @@ Route.get('api/comments','CommentController.index')
 Route.post('api/comments', 'CommentController.store')
 
 Route.delete('api/comments/:id', 'CommentController.destroy')
+
+Route.put('api/comments/:id', 'CommentController.like')
