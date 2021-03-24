@@ -12,6 +12,8 @@ class CommentController{
   }
 
 
+
+
   async store ({ request, response }) {
     const {
       body,
@@ -51,9 +53,15 @@ class CommentController{
     })
   }
 
-  async like ({  params, response, request }) {
+  async retrieve ({ params, response }) {
 
-    const likes = request.input("likes")
+    const comments = await Comment.find(params.id)
+
+
+    return response.status(200).json({ comments })
+  }
+
+  async like ({  params, response }) {
 
     const comments = await Comment.find(params.id)
 
