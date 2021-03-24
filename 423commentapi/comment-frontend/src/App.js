@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 
 
 import Comment from './Comment';
-import AddEvent from './AddComment';
+import AddComment from './AddComment';
 import ApiService from './apiService';
 
 class App extends Component {
 	state = {
 		comments: [],
+    users: [["Alfred", "85af2c11-9ec1-4d1a-a1f7-90f05cffc73c"],
+            ["Rodger", "1454bb0c-d9df-4bb6-9599-887d60d2f748"],
+            ["Lindsay", "6d22a6c9-65cc-4a1a-a509-baf59885feeb"],
+            ["Quincy", "a4c083eb-b8cd-4669-8a54-ac14fd567129"],
+            ["Jeff", "c2d5c3db-8288-4761-bf6f-a99e06ea2982"]
+    ],
 		showCreateCommentForm: false
 	};
 
@@ -50,6 +56,21 @@ class App extends Component {
       })
   }
 
+  getUser = (comment) => {
+
+    const userUUID = comment.poster;
+    let i;
+    let userName = "";
+    for(i=0; i < this.state.users.length; i++)
+    {
+      if(this.state.users[i][1] === userUUID)
+      {
+        userName = this.state.users[i][0]
+      }
+    }
+      return userName;
+  }
+
 	toggleShowCreateCommentForm = () => {
 		this.setState({
 			showCreateCommentForm: !this.state.showCreateCommentForm
@@ -68,9 +89,8 @@ class App extends Component {
 						{this.state.showCreateCommentForm ? 'Cancel' : 'Add Comment'}
 					</button>
 				</div>
-				{this.state.showCreateCommentForm && <AddEvent storeComment={this.storeComment} />}
-        {this.state.comments.map((comment) => <Comment addLike={this.addLike} comment={comment} key={comment.id} />)}
-				{this.state.comments.map((comment) => <Comment deleteComment={this.deleteComment} comment={comment} key={comment.id} />)}
+				{this.state.showCreateCommentForm && <AddComment storeComment={this.storeComment} users={this.state.users} />}
+				{this.state.comments.map((comment) => <Comment deleteComment={this.deleteComment} addLike={this.addLike} getUser={this.getUser} comment={comment} key={comment.id} users={this.state.users}/>)}
 			</div>
 		);
 	}

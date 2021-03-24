@@ -11,6 +11,10 @@ export default class ApiService {
     return this.http.get(`/comments`)
   }
 
+  getComment = async (id) => {
+    return this.http.get(`/comments/${id}`)
+  }
+
   storeComment = async (comment) => {
     return this.http.post(`/comments`, comment)
   }
@@ -20,6 +24,6 @@ export default class ApiService {
   }
 
   addLike = async (id) => {
-    return this.http.put(`/comments/${id}`)
+    return this.http.put(`/comments/likes/${id}`)
   }
 }
