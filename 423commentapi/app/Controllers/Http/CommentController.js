@@ -3,6 +3,7 @@
 //Model
 const Comment = use('App/Models/Comment')
 
+
 class CommentController{
 
   async index ({ response }) {
@@ -15,6 +16,9 @@ class CommentController{
 
 
   async store ({ request, response }) {
+
+
+
     const {
       body,
       post_id,
@@ -43,8 +47,9 @@ class CommentController{
     return response.status(201).json({ comment })
   }
 
+
   async destroy ({  params, response }) {
-    const comments = await Comment.find(params.id)
+    const comments = await Comment.find(params.comment_id)
 
     await comments.delete()
 
@@ -55,7 +60,7 @@ class CommentController{
 
   async retrieve ({ params, response }) {
 
-    const comments = await Comment.find(params.id)
+    const comments = await Comment.find(params.comment_id)
 
 
     return response.status(200).json({ comments })
@@ -63,7 +68,7 @@ class CommentController{
 
   async like ({  params, response }) {
 
-    const comments = await Comment.find(params.id)
+    const comments = await Comment.find(params.comment_id)
 
     comments.likes  = comments.likes + 1
 
@@ -73,6 +78,7 @@ class CommentController{
       message: 'Like added!'
     })
   }
+
 
 
 }
