@@ -4,21 +4,19 @@ import profile from './profile.png';
 import AddReply from "./AddReply";
 import ApiService from "./apiService";
 import Replies from "./Replies";
+import EditComment from "./EditComment"
 
 class Comment extends Component {
 
   state = {
 
     replies: [],
+    //r is sorted replies... I think
     r: [],
-    users: [["Alfred", "85af2c11-9ec1-4d1a-a1f7-90f05cffc73c"],
-      ["Rodger", "1454bb0c-d9df-4bb6-9599-887d60d2f748"],
-      ["Lindsay", "6d22a6c9-65cc-4a1a-a509-baf59885feeb"],
-      ["Quincy", "a4c083eb-b8cd-4669-8a54-ac14fd567129"],
-      ["Jeff", "c2d5c3db-8288-4761-bf6f-a99e06ea2982"]
-    ],
-    showReplyForm: false
+    showReplyForm: false,
+    showEditForm: false
   };
+
   constructor(props) {
     super(props);
     this.apiService = new ApiService();
@@ -43,25 +41,25 @@ class Comment extends Component {
     })
   }
 
+  storeEdit= (data) => {
+    this.apiService.updateComment(data).then(() => {
+      this.props.fetchComments()
+      this.toggleShowEditForm()
+    })
+
+  }
+
   toggleShowReplyForm = () => {
     this.setState({
       showReplyForm: !this.state.showReplyForm
     });
   };
 
-  getUser = (comment) => {
-    const userUuid = comment.poster;
-    let i;
-    let userName = "";
-    for(i=0; i < this.state.users.length; i++)
-    {
-      if(this.state.users[i][1] === userUuid)
-      {
-        userName = this.state.users[i][0]
-      }
-    }
-    return userName;
-  }
+  toggleShowEditForm = () => {
+    this.setState({
+      showEditForm: !this.state.showEditForm
+    });
+  };
 
   findReplies = () => {
 
@@ -80,7 +78,7 @@ class Comment extends Component {
     this.setState({r:rep})
   }
 
-  deleteComment = (comment_id) => {
+  deleteReplies = (comment_id) => {
     this.apiService.deleteComment(comment_id)
       .then(() => {
         this.fetchReplies()
@@ -101,11 +99,11 @@ class Comment extends Component {
         <div className="card-body">
           <div className="cf">
             <img src={profile} alt="pic" className="pic"/>
-            <h2 className="card-title">{this.props.getUser(this.props.refinedComments)}</h2>
+            <h2 className="card-title">{this.props.refinedComments.poster_name}</h2>
           </div>
           <h4 className="card-title">{this.props.refinedComments.body}</h4>
           <button
-            className={`btn ${this.state.showReplyForm ? 'btn-danger' : 'btn-warning'}`}
+            className={`btn ${this.state.showReplyForm ? 'btn-danger two' : 'btn-warning'}`}
             onClick={this.toggleShowReplyForm}>
             {this.state.showReplyForm ? 'Cancel' : 'Reply'}
           </button>
@@ -114,12 +112,14 @@ class Comment extends Component {
           <button className="btn btn-danger float-right btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.deleteComment(this.props.refinedComments.id)}>Delete
           </button>
-          <button className="btn btn-primary float-right btn-sm">Edit</button>
+          <button className={`btn ${this.state.showEditForm ? 'btn-danger three' : 'btn-primary'}`} onClick={this.toggleShowEditForm}>
+            {this.state.showEditForm ? 'Cancel' : 'Edit'}
+          </button>
         </div>
       </div>
-        {this.state.showReplyForm && <AddReply storeReply={this.storeReply} users={this.state.users} parentCommentId={this.props.refinedComments.comment_id} />}
-        {this.state.r.map((r) => <Replies deleteComment={this.deleteComment} addLike={this.addLike} getUser={this.getUser} r={r} key={r.comment_id}/>)}
-
+        {this.state.showEditForm && <EditComment userInfo={this.props.refinedComments} storeEdit={this.storeEdit}/>}
+        {this.state.showReplyForm && <AddReply storeReply={this.storeReply}  parentCommentId={this.props.refinedComments.comment_id}/>}
+        {this.state.r.map((r) => <Replies deleteReplies={this.deleteReplies} fetchReplies={this.fetchReplies} addLike={this.addLike} r={r} key={r.comment_id}/>)}
       </div>
     )
   }

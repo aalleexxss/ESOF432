@@ -19,10 +19,12 @@ Route.on('/').render('home')
 
 Route.get('api/comments','CommentController.index')
 
-Route.get('api/comments/:comment_id','CommentController.retrieve')
+// Route.get('api/comments/:comment_id','CommentController.retrieve')
 
 Route.post('api/comments', 'CommentController.store')
 
 Route.delete('api/comments/:comment_id', 'CommentController.destroy')
 
 Route.put('api/comments/likes/:comment_id', 'CommentController.like')
+
+Route.put('api/comments/edit/:comment_id', 'CommentController.edit')
