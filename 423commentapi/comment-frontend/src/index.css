@@ -8,44 +8,68 @@ body {
   font-size: 0.9rem;
 }
 
-/* Dropdown Button */
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
+.vid{
   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+.btn-primary{
+  position:absolute;
+  top:65px;
+  right:10px;
+  font-size: 18px;
+  margin-right:11px;
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.btn-warning{
+  margin-left: 35px;
+  width: 15%;
+  font-size: 20px;
+}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+.btn-info{
+  margin-top: 4px;
+}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+.cf img {
+  float:left;
+  height: auto;
+  width:4%;
+}
+.cf h2  {float:left;}
+
+h4 {
+  font-weight: bold;
+}
+
+h2{
+  text-decoration: underline;
+}
+.card{
+  width:75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card.my-34{
+  background-color: lightgray;
+  margin-left: 143.5px;
+  margin-bottom: 10px;
+}
+

@@ -45,6 +45,7 @@
     "react-dom": "^17.0.1",
     "react-scripts": "^4.0.3",
     "sqlite3": "^5.0.2",
+    "uuid": "^3.4.0",
     "webpack": "4.44.2"
   },
   "autoload": {

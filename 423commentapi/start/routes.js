@@ -15,17 +15,14 @@
 
 const Route = use('Route')
 
-
 Route.on('/').render('home')
-
-//Route.on('/react').render('react')
 
 Route.get('api/comments','CommentController.index')
 
-Route.get('api/comments/:id','CommentController.retrieve')
+Route.get('api/comments/:comment_id','CommentController.retrieve')
 
 Route.post('api/comments', 'CommentController.store')
 
-Route.delete('api/comments/:id', 'CommentController.destroy')
+Route.delete('api/comments/:comment_id', 'CommentController.destroy')
 
-Route.put('api/comments/likes/:id', 'CommentController.like')
+Route.put('api/comments/likes/:comment_id', 'CommentController.like')

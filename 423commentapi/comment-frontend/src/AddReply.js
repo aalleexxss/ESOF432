@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 
 import { v4 as uuidv4 } from 'uuid';
+
+
 import './index.css'
 
-class AddComment extends Component {
+class AddReply extends Component {
 
   state = {
     body: '',
     //hard coding post id because there's only one post
     post_id: '9ba7b1d5-94e0-41bd-a380-e2f953ffe58c',
     comment_id: uuidv4(),
-    parent_id: '',
+    parent_id: this.props.parentCommentId,
     likes: 0,
     //Default poster is Alfred b/c he's at the top of the list
     poster: '85af2c11-9ec1-4d1a-a1f7-90f05cffc73c',
@@ -25,8 +27,8 @@ class AddComment extends Component {
     })
   }
 
-  createComment = () => {
-    this.props.storeComment(this.state)
+  createReply = () => {
+    this.props.storeReply(this.state)
   }
 
   handlePosterChange = (comment) => {
@@ -53,7 +55,7 @@ class AddComment extends Component {
               <input name="body" onChange={this.handleFieldChange} type="text" className="form-control" placeholder="Body" />
             </div>
             <div className="form-group text-center">
-              <button onClick={this.createComment} className="btn btn-success">Post Comment</button>
+              <button onClick={this.createReply} className="btn btn-success">Post Reply</button>
             </div>
           </div>
         </div>
@@ -62,4 +64,4 @@ class AddComment extends Component {
   }
 }
 
-export default AddComment
+export default AddReply
