@@ -10,12 +10,6 @@ class App extends Component {
 	state = {
 		comments: [],
     refinedComments: [],
-    users: [["Alfred", "85af2c11-9ec1-4d1a-a1f7-90f05cffc73c"],
-            ["Rodger", "1454bb0c-d9df-4bb6-9599-887d60d2f748"],
-            ["Lindsay", "6d22a6c9-65cc-4a1a-a509-baf59885feeb"],
-            ["Quincy", "a4c083eb-b8cd-4669-8a54-ac14fd567129"],
-            ["Jeff", "c2d5c3db-8288-4761-bf6f-a99e06ea2982"]
-    ],
 		showCreateCommentForm: false
 	};
 
@@ -45,7 +39,6 @@ class App extends Component {
 	  this.setState({refinedComments: c})
 
   }
-
 
 	fetchComments = () =>
 		this.apiService.getComments().then(({ data }) => {
@@ -77,20 +70,6 @@ class App extends Component {
       })
   }
 
-  getUser = (comment) => {
-    const userUuid = comment.poster;
-    let i;
-    let userName = "";
-    for(i=0; i < this.state.users.length; i++)
-    {
-      if(this.state.users[i][1] === userUuid)
-      {
-        userName = this.state.users[i][0]
-      }
-    }
-      return userName;
-  }
-
 
 	toggleShowCreateCommentForm = () => {
 		this.setState({
@@ -112,7 +91,7 @@ class App extends Component {
 					</button>
 				</div>
 				{this.state.showCreateCommentForm && <AddComment storeComment={this.storeComment} users={this.state.users} />}
-				{this.state.refinedComments.map((refinedComments) => <Comment deleteComment={this.deleteComment} addLike={this.addLike} getUser={this.getUser} refinedComments={refinedComments} key={refinedComments.comment_id}/>)}
+				{this.state.refinedComments.map((refinedComments) => <Comment deleteComment={this.deleteComment} addLike={this.addLike} refinedComments={refinedComments} fetchComments={this.fetchComments} key={refinedComments.comment_id}/>)}
 			</div>
 		);
 	}

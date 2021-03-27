@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="commentdb" uuid="cad79a0f-c176-48d1-a337-ffe9a417d7a3">
+    <data-source source="LOCAL" name="commentsdb [2]" uuid="1df9f3d8-0b93-4f1f-b205-d3c32410abda">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\saylo\Documents\GitHub\ESOF432\423commentapi\database\commentdb.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\saylo\Documents\GitHub\ESOF432\423commentapi\database\commentsdb.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>

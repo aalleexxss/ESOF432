@@ -17,8 +17,6 @@ class CommentController{
 
   async store ({ request, response }) {
 
-
-
     const {
       body,
       post_id,
@@ -26,6 +24,7 @@ class CommentController{
       parent_id,
       likes,
       poster,
+      poster_name,
       id,
       created_at,
       updated_at
@@ -39,6 +38,7 @@ class CommentController{
       parent_id,
       likes,
       poster,
+      poster_name,
       id,
       created_at,
       updated_at
@@ -58,13 +58,13 @@ class CommentController{
     })
   }
 
-  async retrieve ({ params, response }) {
-
-    const comments = await Comment.find(params.comment_id)
-
-
-    return response.status(200).json({ comments })
-  }
+  // async retrieve ({ params, response }) {
+  //
+  //   const comments = await Comment.find(params.comment_id)
+  //
+  //
+  //   return response.status(200).json({ comments })
+  // }
 
   async like ({  params, response }) {
 
@@ -77,6 +77,24 @@ class CommentController{
     return response.status(200).json({
       message: 'Like added!'
     })
+  }
+
+  async edit ({params, request, response})
+  {
+    const {
+      body,
+    } = request.all()
+
+    const comments = await Comment.find(params.comment_id)
+
+    comments.body = body
+
+    await comments.save()
+
+    return response.status(200).json({
+      message: "Comment updated" + comments.body
+    })
+
   }
 
 

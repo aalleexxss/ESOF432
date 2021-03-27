@@ -22,10 +22,21 @@ body {
   margin-right:11px;
 }
 
+.btn-danger.three{
+  position:absolute;
+  top:65px;
+  right:10px;
+  font-size: 18px;
+  margin-right:11px;
+}
+
 .btn-warning{
-  margin-left: 35px;
-  width: 15%;
-  font-size: 20px;
+  margin-top: 6.5px;
+  margin-left: 25px;
+  height: 35px;
+  width: 150px;
+  font-size: 17px;
+  text-align: center;
 }
 
 .btn-info{
@@ -73,3 +84,26 @@ h2{
   margin-bottom: 10px;
 }
 
+.btn-danger.two{
+
+  margin-top: 5px;
+  margin-left: 5px;
+
+}
+.pic{
+  margin-top: 5px;
+  margin-right: 8px;
+}
+
+.card-body.edits{
+  z-index: 10 !important;
+  background-color: #0d5aa7!important;
+}
+
+.edit-box{
+  margin-right: 150px;
+  width: 745px;
+  height: 100px;
+  font-weight: bold;
+  font-size: 23px;
+}

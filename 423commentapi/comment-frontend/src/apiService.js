@@ -11,9 +11,9 @@ export default class ApiService {
     return this.http.get(`/comments`)
   }
 
-  getComment = async (comment_id) => {
-    return this.http.get(`/comments/${comment_id}`)
-  }
+  // getComment = async (comment_id) => {
+  //   return this.http.get(`/comments/${comment_id}`)
+  // }
 
   getReplies = async (comment_id) => {
     return this.http.get(`/comments/replies/${comment_id}`)
@@ -21,6 +21,10 @@ export default class ApiService {
 
   storeComment = async (comment) => {
     return this.http.post(`/comments`, comment)
+  }
+
+  updateComment = async (comment) => {
+    return this.http.put(`/comments/edit/${comment.id}`, comment)
   }
 
   deleteComment = async (comment_id) => {
