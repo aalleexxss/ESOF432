@@ -3,62 +3,101 @@
 //Model
 const Comment = use('App/Models/Comment')
 
+
 class CommentController{
 
-  async index({ view }) {
+  async index ({ response }) {
+    const comments = await Comment.all()
 
-    const comments = await Comment.all();
+    return response.status(200).json({ comments })
+  }
 
-    return view.render('comments.index', {
-      title: 'Comment Data: ',
-      comments: comments.toJSON()
+
+
+
+  async store ({ request, response }) {
+
+    const {
+      body,
+      post_id,
+      comment_id,
+      parent_id,
+      likes,
+      poster,
+      poster_name,
+      id,
+      created_at,
+      updated_at
+
+    } = request.all()
+
+    const comment = await Comment.create({
+      body,
+      post_id,
+      comment_id,
+      parent_id,
+      likes,
+      poster,
+      poster_name,
+      id,
+      created_at,
+      updated_at
+    })
+
+    return response.status(201).json({ comment })
+  }
+
+
+  async destroy ({  params, response }) {
+    const comments = await Comment.find(params.comment_id)
+
+    await comments.delete()
+
+    return response.status(200).json({
+      message: 'Comment deleted successfully.'
     })
   }
 
-  async add({ view }) {
-    return view.render('comment.add')
-  }
-
-  async store({ request, response, session }) {
-    const comment = new Comment();
-
-    comment.body = request.input('body')
-
-    await comment.save()
-
-    session.flash({ notification: 'Comment submitted!'})
-
-    return response.redirect('/comments')
-
-  }
-
-  // Need to implement edit
-
-  // async edit({ view }) {
-  //   return view.render('comment.add')
+  // async retrieve ({ params, response }) {
+  //
+  //   const comments = await Comment.find(params.comment_id)
+  //
+  //
+  //   return response.status(200).json({ comments })
   // }
 
-  async destroy({ params, session, response }) {
+  async like ({  params, response }) {
 
-    var i = 0;
+    const comments = await Comment.find(params.comment_id)
 
-    for(i = 0; i < 1000; i++){
+    comments.likes  = comments.likes + 1
 
-      const comment = await Comment.find(i)
+    await comments.save()
 
-      if( comment != null){
+    return response.status(200).json({
+      message: 'Like added!'
+    })
+  }
 
-        await comment.delete()
+  async edit ({params, request, response})
+  {
+    const {
+      body,
+    } = request.all()
 
-      }
-    }
+    const comments = await Comment.find(params.comment_id)
 
-    session.flash({ notification: 'Comment(s) deleted!'})
+    comments.body = body
 
-    return response.redirect('/comments')
+    await comments.save()
 
+    return response.status(200).json({
+      message: "Comment updated" + comments.body
+    })
 
   }
+
+
 
 }
 

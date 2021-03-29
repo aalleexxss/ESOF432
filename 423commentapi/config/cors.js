@@ -16,7 +16,9 @@ module.exports = {
   | Function - Receives the current origin and should return one of the above values.
   |
   */
-  origin: false,
+  origin: true,
+
+
 
   /*
   |--------------------------------------------------------------------------
@@ -47,7 +49,7 @@ module.exports = {
   | Function - Receives the current header and should return one of the above values.
   |
   */
-  headers: true,
+  headers: '*',
 
   /*
   |--------------------------------------------------------------------------
@@ -62,7 +64,6 @@ module.exports = {
   | Array - An array of allowed headers
   |
   */
-  exposeHeaders: false,
 
   /*
   |--------------------------------------------------------------------------
@@ -73,7 +74,6 @@ module.exports = {
   | boolean.
   |
   */
-  credentials: false,
 
   /*
   |--------------------------------------------------------------------------
@@ -83,5 +83,4 @@ module.exports = {
   | Define Access-Control-Allow-Max-Age
   |
   */
-  maxAge: 90
 }

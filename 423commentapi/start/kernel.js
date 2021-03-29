@@ -13,6 +13,7 @@ const Server = use('Server')
 |
 */
 const globalMiddleware = [
+  'Adonis/Middleware/Cors',
   'Adonis/Middleware/BodyParser',
   'Adonis/Middleware/Session',
   'Adonis/Middleware/Shield',
@@ -58,6 +59,7 @@ const serverMiddleware = [
 ]
 
 Server
+  .use(['Adonis/Middleware/Cors'])
   .registerGlobal(globalMiddleware)
   .registerNamed(namedMiddleware)
   .use(serverMiddleware)
