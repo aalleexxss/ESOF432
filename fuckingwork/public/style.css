@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  background-image: url("/splash.png");
+  background-color: #220052;
+}
+
+* {
+  margin: 0;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 536px;
+  margin: auto;
+  position: relative;
+}
+
+section:before {
+  content: "";
+  position: absolute;
+  background: url("/pyramid.png") no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 402px;
+  z-index: -1;
+}
+
+.logo {
+  background: url("/logo.svg") no-repeat;
+  width: 36px;
+  height: 33px;
+  background-size: 100%;
+  margin-bottom: 35px;
+  opacity: 0;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 1.3s forwards;
+}
+
+.title {
+  background: url("/title.svg") no-repeat;
+  width: 219px;
+  height: 36px;
+  background-size: 100%;
+  opacity: 0;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 0.2s forwards;
+}
+
+.subtitle {
+  margin-top: 25px;
+  color: #BDB3CB;
+  font-size: 17px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  animation: slideUp 1s cubic-bezier(0.19, 1, 0.30, 1) 0.5s forwards;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+p {
+  margin-left: 780px;
+  margin-right: 700px;
+  margin-top: -30px;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2%;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+body {
+  background: #ffffff;
+}
+
+.header {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: #333333 solid 2px;
+  background: #808080;
+  color: #ffffff;
+  margin-left: 0px;
+  margin-right: -150px;
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 48em) {
+  .container {
+    max-width: 46rem;
+  }
+}
+
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.header h4 {
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: #333333 solid 2px;
+  background: #808080;
+  background-size: cover;
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+li {
+  margin: auto;
+}
+
+a:hover {
+  color: aqua;
+}
+
+a:active {
+  color: yellow;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+
+.center3 {
+  display: block;
+  margin-left: 20px;
+  margin-right: auto;
+  width: 35%;
+}
+
+
+.img {
+  padding-bottom: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.btn-primary {
+  float:right;
+  display: inline;
+  margin-left: auto;
+  width: 15%;
+  margin-top: 5px;
+}
+.btn-danger {
+  float:left;
+  display: inline;
+  margin-right: auto;
+  width: 40%;
+  margin-top: -12px;
+}
+
+.report {
+  margin-left: 619px;
+  margin-right: 623px;
+  margin-top: -36px;
+  width: 5%;
+}
+
+.center2 {
+  margin: auto;
+  width: 60%;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-secondary {
+  background-image: url(https://i.ibb.co/YPHLss9/2529722222.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 26px;
+  width: 20px;
+  border: none;
+  margin-left: 740px;
+  margin-right: 623px;
+  margin-top: -33px;
+}
+
+.open-button {
+  background-image: url(https://i.ibb.co/MsNjgCz/1234.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  height: 35px;
+  width: 88px;
+  margin-left: 619px;
+  margin-right: 623px;
+  margin-top: -36px;
+  border: 0;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.textarea2 {
+  height: 100px;
+  width: 100%;
+  padding: 15px;
+  margin: 0px 0 20px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
