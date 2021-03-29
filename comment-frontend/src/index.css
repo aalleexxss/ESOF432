@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,600");
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+
+body {
+  background-color: #f5f8fa;
+  color: #212529;
+  font-family: "Raleway", sans-serif;
+  font-size: 0.9rem;
+}
+
+.vid{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 45%;
+}
+.btn-primary{
+  position:absolute;
+  top:20px;
+  right:10px;
+  font-size: 18px;
+  margin-right:11px;
+}
+
+.btn-danger.three{
+  position:absolute;
+  top:20px;
+  right:10px;
+  font-size: 18px;
+  margin-right:11px;
+}
+
+.btn-warning{
+  margin-top: 6.5px;
+  margin-left: 25px;
+  height: 35px;
+  width: 150px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.btn-info{
+  margin-top: 4px;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+.cf h2  {float:left;}
+
+h4 {
+  font-weight: bold;
+}
+
+h2{
+  text-decoration: underline;
+}
+.card{
+  width:75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card.my-34{
+  background-color: #d9d9d9;
+  margin-left: 143.5px;
+  margin-bottom: 10px;
+}
+
+.btn-danger.two{
+
+  margin-top: 5px;
+  margin-left: 5px;
+
+}
+.pic{
+  margin-top: 5px;
+  margin-right: 8px;
+  float:left;
+  height: auto;
+  width:4%;
+}
+
+.card-body.edits{
+  z-index: 10 !important;
+  background-color: #BC8F8F !important;
+}
+
+.edit-box{
+  margin-right: 150px;
+  width: 725px;
+  height: 100px;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.form-control.body{
+
+  height: 100px;
+
+}
+
+.form-control.reply{
+
+  height: 100px;
+
+}
+
+.card-body.small{
+}
+
+.cf.edits{
+  position: relative;
+}
+
+
+.edit-wheel{
+  width: 5%;
+  position: absolute;
+  right: 0px;
+}
+
+h5{
+  text-align: right;
+  margin-right: 37px;
+  margin-top: 6px;
+  font-weight: 550;
+}

@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js",
+    "start": "ENV_PATH=./.env.production cross-env NODE_ENV=production node server.js",
     "test": "node ace test"
   },
   "keywords": [
