@@ -18,7 +18,7 @@ module.exports = {
         title: 'Adonis 💘 Swagger',
         version: '1.0.0',
       },
-  
+
       basePath: '/',
 
       // Example security definitions.
