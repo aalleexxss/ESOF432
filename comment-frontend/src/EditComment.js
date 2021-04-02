@@ -5,6 +5,8 @@ import editing from "./editing.gif"
 
 class EditComment extends Component {
 
+
+
   state = {
     body: this.props.userInfo.body,
     //hard coding post id because there's only one post
