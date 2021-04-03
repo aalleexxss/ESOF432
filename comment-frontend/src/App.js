@@ -80,6 +80,11 @@ class App extends Component {
 	render() {
 		return (
 			<div className="container">
+				<h1>
+					<a href="https://distributed-amp-309017.wm.r.appspot.com/docs/">
+						View documentation here
+					</a>
+				</h1>
         <br/>
         	<ReactPlayer className={"vid"} url="https://www.youtube.com/watch?v=EL-D9LrFJd4"/>
         <br/>
