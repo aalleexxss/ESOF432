@@ -33,20 +33,21 @@ class Replies extends Component {
 
   render() {
     return (
-    <div className="container">
+    <div className="container replies">
       <div className="card my-34">
         <div className="card-body">
           <div className="cf">
             <img src={profile} alt="pic" className="pic"/>
             <h2 className="card-title">{this.props.r.poster_name}</h2>
+            <p2 className="card-title">{this.props.r.created_at}</p2>
           </div>
           <h4 className="card-title">{this.props.r.body}</h4>
-          <button className="btn-info" style={{fontSize: '18px'}}
+          <button className="btn-info btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.addLike(this.props.r.id)}>Likes: {this.props.r.likes}</button>
           <button className="btn btn-danger float-right btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.deleteReplies(this.props.r.id)}>Delete
           </button>
-          <button className={`btn ${this.state.showEditForm ? 'btn-danger three' : 'btn-primary'}`} onClick={this.toggleShowEditForm}>
+          <button className={`btn ${this.state.showEditForm ? 'btn-danger three' : 'btn-primary two'}`} onClick={this.toggleShowEditForm}>
             {this.state.showEditForm ? 'Cancel' : 'Edit'}
           </button>
         </div>

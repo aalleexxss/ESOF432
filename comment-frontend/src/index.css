@@ -8,39 +8,73 @@ body {
   font-size: 0.9rem;
 }
 
-.vid{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 45%;
+.vid_container{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
 }
-.btn-primary{
+
+.vid_container iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
   position:absolute;
-  top:20px;
-  right:10px;
+}
+
+.btn-primary{
+  position: relative;
+  float:right;
   font-size: 18px;
-  margin-right:11px;
+  bottom: 90px;
+  left: 70px;
+  box-shadow: 2px 2px #00008B;
+}
+
+.btn-primary.two{
+  position: relative;
+  float:right;
+  font-size: 18px;
+  bottom: 60px;
+  left: 70px;
 }
 
 .btn-danger.three{
-  position:absolute;
-  top:20px;
-  right:10px;
+  position: relative;
+  float:right;
   font-size: 18px;
-  margin-right:11px;
+  bottom: 60px;
+  left: 74px;
+}
+
+.btn-danger.four{
+  position: relative;
+  float:right;
+  font-size: 18px;
+  bottom: 90px;
+  left: 74px;
 }
 
 .btn-warning{
-  margin-top: 6.5px;
+  top: 5.5px;
   margin-left: 25px;
   height: 35px;
-  width: 150px;
+  width: 90px;
   font-size: 17px;
+  font-weight: bold;
   text-align: center;
+  position: relative;
+  box-shadow: 2px 2px #B8860B;
 }
 
 .btn-info{
   margin-top: 4px;
+  position: relative;
+}
+
+.btn-info.two{
+  width: 50%;
 }
 
 .cf:before,
@@ -72,24 +106,49 @@ h2{
   margin-right: auto;
 }
 
+.row.replies{
+  width: 113%;
+}
+
 .card.my-34{
   background-color: #d9d9d9;
-  margin-left: 143.5px;
+  margin-left: auto;
+  width: auto;
   margin-bottom: 10px;
+  position: relative;
+}
+
+.container.replies{
+  margin-left: 15px;
+}
+
+.card.my-3{
+  width: auto;
 }
 
 .btn-danger.two{
-
-  margin-top: 5px;
-  margin-left: 5px;
-
+  top: 5.5px;
+  margin-left: 25px;
+  height: 35px;
+  width: 90px;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  box-shadow: 2px 2px #8B0000;
 }
+
+.btn-danger{
+  position: relative;
+  box-shadow: 2px 2px #8B0000;
+}
+
 .pic{
   margin-top: 5px;
   margin-right: 8px;
   float:left;
   height: auto;
-  width:4%;
+  position: relative;
 }
 
 .card-body.edits{
@@ -99,10 +158,11 @@ h2{
 
 .edit-box{
   margin-right: 150px;
-  width: 725px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   font-weight: bold;
   font-size: 23px;
+  position: relative;
 }
 
 .form-control.body{
@@ -126,14 +186,37 @@ h2{
 
 
 .edit-wheel{
-  width: 5%;
   position: absolute;
   right: 0px;
 }
 
+p{
+  position: relative;
+  top: 9px;
+  left: 5px;
+  font-style: italic;
+  font-size: 17px;
+}
+
+p2{
+  position: relative;
+  top: 9px;
+  left: 5px;
+  font-style: italic;
+  font-size: 15.1px;
+}
+
 h5{
   text-align: right;
-  margin-right: 37px;
+  margin-right: 40px;
   margin-top: 6px;
   font-weight: 550;
+  font-size: 17px;
 }
+
+.error{
+  font-weight: bold;
+  font-size: 13px;
+  color: red;
+}
+
