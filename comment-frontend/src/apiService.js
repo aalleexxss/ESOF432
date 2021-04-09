@@ -3,7 +3,7 @@ import axios from 'axios'
 export default class ApiService {
   constructor() {
     this.http = axios.create({
-      baseURL: 'http://localhost:8080/api',
+      baseURL: 'https://backend-309717.wm.r.appspot.com/api',
       responseType: "json"
     })
   }

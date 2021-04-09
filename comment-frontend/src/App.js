@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './index.css'
-import ReactPlayer from "react-player";
 
 import Comment from './Comment';
 import AddComment from './AddComment';
@@ -80,12 +79,18 @@ class App extends Component {
 	render() {
 		return (
 			<div className="container">
-        <br/>
-        	<ReactPlayer className={"vid"} url="https://www.youtube.com/watch?v=EL-D9LrFJd4"/>
-        <br/>
+
+				<h4>This site is used to demonstrate functionality of a comment system. There is a video below to show how users may use comments to interact with a video post. You may view documentation&nbsp;
+					<a href="https://backend-309717.wm.r.appspot.com/docs/">here</a>
+				</h4>
+					<br/>
+				<div className={"vid_container"}>
+					<iframe title={"Vid"} width="420" height="315" src="https://www.youtube.com/embed/EL-D9LrFJd4" frameBorder="0" allowFullScreen></iframe>
+				</div>
+        			<br/>
 				<div className="text-center mb-5">
 					<button
-						className={`btn ${this.state.showCreateCommentForm ? 'btn-danger' : 'btn-info'}`}
+						className={`btn ${this.state.showCreateCommentForm ? 'btn-danger' : 'btn-info two'}`}
 						onClick={this.toggleShowCreateCommentForm}>
 						{this.state.showCreateCommentForm ? 'Cancel' : 'Add Comment'}
 					</button>

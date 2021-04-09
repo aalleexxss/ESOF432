@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './index.css'
 import profile from "./profile.png";
-import editing from "./editing.gif"
+import editing from "./editing2.gif"
 
 class EditComment extends Component {
 
@@ -18,7 +18,8 @@ class EditComment extends Component {
     poster_name: this.props.userInfo.poster_name,
     id: this.props.userInfo.id,
     created_at: this.props.userInfo.created_at,
-    updated_at: this.props.userInfo.updated_at
+    updated_at: this.props.userInfo.updated_at,
+    errors: {}
   }
 
   handleFieldChange = (comment) => {
@@ -27,8 +28,23 @@ class EditComment extends Component {
     })
   }
 
+  handleValidation(){
+    let body = this.state.body;
+    let errors = {};
+    let formIsValid = true;
+
+    if(body === ""){
+      formIsValid = false;
+      errors["body"] = "Cannot be empty";
+    }
+    this.setState({errors: errors});
+    return formIsValid;
+  }
+
   createEdit = () => {
-    this.props.storeEdit(this.state)
+    if(this.handleValidation()) {
+      this.props.storeEdit(this.state)
+    }
   }
 
   handleKeypress = (e) => {
@@ -49,6 +65,7 @@ class EditComment extends Component {
               <img src={editing} alt={""} className="edit-wheel"/>
               <h5>Editing</h5>
               <textarea className="edit-box" name="body" onKeyDown={this.handleKeypress} onChange={this.handleFieldChange}>{this.props.userInfo.body}</textarea>
+              <span className="error">{this.state.errors["body"]}</span>
               <button onClick={this.createEdit} className="btn btn-success float-right">Update Comment</button>
             </div>
           </div>
