@@ -94,12 +94,13 @@ class Comment extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container comments">
       <div className="card my-3">
         <div className="card-body small">
           <div className="cf">
             <img src={profile} alt="pic" className="pic"/>
             <h2 className="card-title">{this.props.refinedComments.poster_name}</h2>
+            <p className="card-title">{this.props.refinedComments.created_at}</p>
           </div>
           <h4 className="card-title">{this.props.refinedComments.body}</h4>
           <button
@@ -112,7 +113,7 @@ class Comment extends Component {
           <button className="btn btn-danger float-right btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.deleteComment(this.props.refinedComments.id)}>Delete
           </button>
-          <button className={`btn ${this.state.showEditForm ? 'btn-danger three' : 'btn-primary'}`} onClick={this.toggleShowEditForm}>
+          <button className={`btn ${this.state.showEditForm ? 'btn-danger four' : 'btn-primary'}`} onClick={this.toggleShowEditForm}>
             {this.state.showEditForm ? 'Cancel' : 'Edit'}
           </button>
         </div>
