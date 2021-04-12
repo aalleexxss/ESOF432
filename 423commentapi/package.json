@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "ENV_PATH=./.env.production cross-env NODE_ENV=production node server.js",
+    "start": "start: ENV_PATH=./.env.production cross-env NODE_ENV=production node server.js",
     "test": "node ace test"
   },
   "keywords": [
@@ -41,6 +41,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
     "jquery": "^3.5.1",
+    "knex": "^0.16.5",
     "mysql": "^2.18.1",
     "react-dom": "^17.0.1",
     "react-scripts": "^4.0.3",
