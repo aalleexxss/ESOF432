@@ -1,6 +1,7 @@
 'use strict'
 
 //Model
+const Database = use('Database')
 const Comment = use('App/Models/Comment')
 
 /**
@@ -97,13 +98,11 @@ const Comment = use('App/Models/Comment')
 class CommentController{
 
   async index ({ response }) {
+
     const comments = await Comment.all()
 
     return response.status(200).json({ comments })
   }
-
-
-
 
   async store ({ request, response }) {
 
@@ -137,24 +136,18 @@ class CommentController{
     return response.status(201).json({ comment })
   }
 
-
   async destroy ({  params, response }) {
-    const comments = await Comment.find(params.comment_id)
 
-    await comments.delete()
+    const deleteComment = await Comment.find(params.comment_id)
+
+    await Database.from('comments').where('parent_id', deleteComment.comment_id).delete()
+
+    await deleteComment.delete()
 
     return response.status(200).json({
       message: 'Comment deleted successfully.'
     })
   }
-
-  // async retrieve ({ params, response }) {
-  //
-  //   const comments = await Comment.find(params.comment_id)
-  //
-  //
-  //   return response.status(200).json({ comments })
-  // }
 
   async like ({  params, response }) {
 
@@ -182,13 +175,10 @@ class CommentController{
     await comments.save()
 
     return response.status(200).json({
-      message: "Comment updated" + comments.body
+      message: "Comment updated to: " + comments.body
     })
 
   }
-
-
-
 }
 
 module.exports = CommentController

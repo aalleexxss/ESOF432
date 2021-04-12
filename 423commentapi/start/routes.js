@@ -19,8 +19,6 @@ Route.on('/').render('home')
 
 Route.get('api/comments','CommentController.index')
 
-// Route.get('api/comments/:comment_id','CommentController.retrieve')
-
 Route.post('api/comments', 'CommentController.store')
 
 Route.delete('api/comments/:comment_id', 'CommentController.destroy')

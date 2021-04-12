@@ -3,7 +3,7 @@ import axios from 'axios'
 export default class ApiService {
   constructor() {
     this.http = axios.create({
-      baseURL: 'https://backend-309717.wm.r.appspot.com/api',
+      baseURL: 'http://localhost:5000/api',
       responseType: "json"
     })
   }
@@ -11,10 +11,6 @@ export default class ApiService {
   getComments = async () => {
     return this.http.get(`/comments`)
   }
-
-  // getComment = async (comment_id) => {
-  //   return this.http.get(`/comments/${comment_id}`)
-  // }
 
   getReplies = async (comment_id) => {
     return this.http.get(`/comments/replies/${comment_id}`)
