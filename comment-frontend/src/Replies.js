@@ -28,7 +28,6 @@ class Replies extends Component {
       this.props.fetchReplies()
       this.toggleShowEditForm()
     })
-
   }
 
   render() {
@@ -57,4 +56,5 @@ class Replies extends Component {
     )
   }
 }
+
 export default Replies

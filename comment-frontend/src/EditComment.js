@@ -53,7 +53,6 @@ class EditComment extends Component {
     }
   };
 
-
   render() {
     return (
       <div className="container edits">
