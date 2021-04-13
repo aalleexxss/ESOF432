@@ -3,7 +3,7 @@ import axios from 'axios'
 export default class ApiService {
   constructor() {
     this.http = axios.create({
-      baseURL: 'http://localhost:5000/api',
+      baseURL: 'http://localhost:5000/api/',
       responseType: "json"
     })
   }

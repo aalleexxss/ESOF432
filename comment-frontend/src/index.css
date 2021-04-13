@@ -8,6 +8,15 @@ body {
   font-size: 0.9rem;
 }
 
+.dark-mode {
+  background-color: #333333;
+  color: #f5f8fa;
+}
+
+.dark{
+margin-left: 10px;
+}
+
 .vid_container{
   overflow:hidden;
   padding-bottom:56.25%;
@@ -25,56 +34,145 @@ body {
 
 .btn-primary{
   position: relative;
-  float:right;
-  font-size: 18px;
-  bottom: 90px;
-  left: 70px;
+  float: right;
+  right: 25px;
+  top: 4px;
   box-shadow: 2px 2px #00008B;
+  border-radius: .25rem;
+}
+
+@media only screen and (max-width: 420px) {
+  .btn-primary{
+    position: relative;
+    left: 0px;
+    margin-right: 10px;
+    box-shadow: 2px 2px #00008B;
+    border-radius: .25rem;
+  }
 }
 
 .btn-primary.two{
   position: relative;
-  float:right;
-  font-size: 18px;
-  bottom: 60px;
-  left: 70px;
+  float: right;
+  right: 25px;
+  top: 4px;
+  box-shadow: 2px 2px #00008B;
+  border-radius: .25rem;
+}
+
+@media only screen and (max-width: 420px) {
+  .btn-primary.two{
+    position: relative;
+    left: 0px;
+    margin-right: 10px;
+    box-shadow: 2px 2px #00008B;
+    border-radius: .25rem;
+  }
+}
+
+.btn-danger{
+  top: 4px;
+  position: relative;
+  box-shadow: 2px 2px #8B0000;
+  border-radius: .25rem;
+}
+
+.btn-danger.cancel{
+  top: 0px;
+  position: relative;
+  box-shadow: 2px 2px #8B0000;
+  border-radius: .25rem;
+}
+
+.btn-danger.two{
+  top: 3px;
+  margin-left: 25px;
+  height: 35px;
+  width: 90px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  box-shadow: 2px 2px #8B0000;
+  border-radius: .25rem;
+}
+
+@media only screen and (max-width: 420px) {
+  .btn-danger.two{
+    top: 3.5px;
+    margin-left: 10px;
+    height: 35px;
+    width: 75px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    box-shadow: 2px 2px #B8860B;
+    border-radius: .25rem;
+  }
 }
 
 .btn-danger.three{
   position: relative;
   float:right;
-  font-size: 18px;
   bottom: 60px;
   left: 74px;
+  border-radius: .25rem;
 }
 
 .btn-danger.four{
   position: relative;
   float:right;
-  font-size: 18px;
-  bottom: 90px;
+  bottom: 60px;
   left: 74px;
+  border-radius: .25rem;
+}
+
+@media only screen and (max-width: 420px) {
+  .btn-danger.four{
+    position: relative;
+    float:right;
+    bottom: 90px;
+    left: 70px;
+    box-shadow: 2px 2px #8B0000;
+    border-radius: .25rem;
+  }
 }
 
 .btn-warning{
-  top: 5.5px;
+  top: 3.5px;
   margin-left: 25px;
   height: 35px;
   width: 90px;
-  font-size: 17px;
   font-weight: bold;
   text-align: center;
   position: relative;
   box-shadow: 2px 2px #B8860B;
+  border-radius: .25rem;
+}
+
+@media only screen and (max-width: 420px) {
+  .btn-warning{
+    top: 3.5px;
+    margin-left: 10px;
+    height: 35px;
+    width: 65px;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    box-shadow: 2px 2px #B8860B;
+    border-radius: .25rem;
+  }
 }
 
 .btn-info{
   margin-top: 4px;
   position: relative;
+  border-radius: .25rem;
 }
 
 .btn-info.two{
+  margin-top: 0px;
   width: 50%;
+  border-radius: .25rem;
 }
 
 .cf:before,
@@ -111,7 +209,8 @@ h2{
 }
 
 .card.my-34{
-  background-color: #d9d9d9;
+  background-color: #A9A9A9;
+  color: #333333;
   margin-left: auto;
   width: auto;
   margin-bottom: 10px;
@@ -123,24 +222,8 @@ h2{
 }
 
 .card.my-3{
+  color: #333333;
   width: auto;
-}
-
-.btn-danger.two{
-  top: 5.5px;
-  margin-left: 25px;
-  height: 35px;
-  width: 90px;
-  font-size: 17px;
-  font-weight: bold;
-  text-align: center;
-  position: relative;
-  box-shadow: 2px 2px #8B0000;
-}
-
-.btn-danger{
-  position: relative;
-  box-shadow: 2px 2px #8B0000;
 }
 
 .pic{
@@ -178,6 +261,7 @@ h2{
 }
 
 .card-body.small{
+
 }
 
 .cf.edits{
@@ -190,12 +274,30 @@ h2{
   right: 0px;
 }
 
+@media only screen and (max-width: 420px) {
+  p{
+    position: relative;
+    top: 9px;
+    left: 5px;
+    font-style: italic;
+    font-size: 11.9px !important;
+  }
+
+  p2{
+    position: relative;
+    top: 9px;
+    left: 5px;
+    font-style: italic;
+    font-size: 8.6px !important;
+  }
+}
+
 p{
   position: relative;
   top: 9px;
   left: 5px;
   font-style: italic;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 p2{
@@ -203,7 +305,7 @@ p2{
   top: 9px;
   left: 5px;
   font-style: italic;
-  font-size: 15.1px;
+  font-size: 18px;
 }
 
 h5{
@@ -220,3 +322,8 @@ h5{
   color: red;
 }
 
+@media only screen and (max-width: 420px) {
+  .card-title {
+    width: 100%;
+  }
+}
