@@ -5,6 +5,7 @@ import AddReply from "./AddReply";
 import ApiService from "./apiService";
 import Replies from "./Replies";
 import EditComment from "./EditComment"
+import Swal from "emittery";
 
 class Comment extends Component {
 
@@ -91,6 +92,7 @@ class Comment extends Component {
         this.fetchReplies()
       })
   }
+
 
   render() {
     return (
