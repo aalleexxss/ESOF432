@@ -19,6 +19,7 @@ class AddReply extends Component {
     id: '',
     created_at: '',
     updated_at: '',
+    date: Date().toLocaleString(),
     errors: {}
   }
 

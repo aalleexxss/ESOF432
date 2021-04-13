@@ -17,9 +17,9 @@ class AddComment extends Component {
     id: '',
     created_at: '',
     updated_at: '',
+    date: Date().toLocaleString(),
     errors: {}
   }
-
 
   handleFieldChange = (comment) => {
     this.setState({

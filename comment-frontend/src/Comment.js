@@ -5,6 +5,8 @@ import AddReply from "./AddReply";
 import ApiService from "./apiService";
 import Replies from "./Replies";
 import EditComment from "./EditComment"
+import Button from "react-bootstrap/Button";
+// import Swal from "emittery";
 
 class Comment extends Component {
 
@@ -46,7 +48,6 @@ class Comment extends Component {
       this.props.fetchComments()
       this.toggleShowEditForm()
     })
-
   }
 
   toggleShowReplyForm = () => {
@@ -75,7 +76,9 @@ class Comment extends Component {
         }
       }
     }
+
     this.setState({r:rep})
+
   }
 
   deleteReplies = (comment_id) => {
@@ -100,22 +103,25 @@ class Comment extends Component {
           <div className="cf">
             <img src={profile} alt="pic" className="pic"/>
             <h2 className="card-title">{this.props.refinedComments.poster_name}</h2>
-            <p className="card-title">{this.props.refinedComments.created_at}</p>
+            <p className="card-title">{this.props.refinedComments.date}</p>
           </div>
-          <h4 className="card-title">{this.props.refinedComments.body}</h4>
+          <div className={"text"}>
+          <h4 className="card-title body">{this.props.refinedComments.body}</h4>
+          </div>
           <button
             className={`btn ${this.state.showReplyForm ? 'btn-danger two' : 'btn-warning'}`}
             onClick={this.toggleShowReplyForm}>
             {this.state.showReplyForm ? 'Cancel' : 'Reply'}
           </button>
-          <button className="btn-info float-left btn-sm" style={{fontSize: '18px'}}
-                  onClick={() => this.props.addLike(this.props.refinedComments.id)}>Likes: {this.props.refinedComments.likes}</button>
-          <button className="btn btn-danger float-right btn-sm" style={{fontSize: '18px'}}
+          <Button className="btn-info float-left" style={{fontSize: '18px'}}
+                  onClick={() => this.props.addLike(this.props.refinedComments.id)} variant="info">Likes: {this.props.refinedComments.likes}</Button>{' '}
+          <button className="btn btn-danger delete float-right btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.deleteComment(this.props.refinedComments.id)}>Delete
           </button>
           <button className={`btn ${this.state.showEditForm ? 'btn-danger four' : 'btn-primary'}`} onClick={this.toggleShowEditForm}>
             {this.state.showEditForm ? 'Cancel' : 'Edit'}
           </button>
+
         </div>
       </div>
         {this.state.showEditForm && <EditComment userInfo={this.props.refinedComments} storeEdit={this.storeEdit}/>}
@@ -125,4 +131,5 @@ class Comment extends Component {
     )
   }
 }
+
 export default Comment
