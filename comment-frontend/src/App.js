@@ -16,13 +16,11 @@ class App extends Component {
 
 	constructor(props) {
 		super(props);
-
 		this.apiService = new ApiService();
 	}
 
 	componentWillMount() {
 		this.fetchComments();
-
 	}
 
   refineComments = (comments) => {
@@ -71,7 +69,6 @@ class App extends Component {
       })
   }
 
-
 	toggleShowCreateCommentForm = () => {
 		this.setState({
 			showCreateCommentForm: !this.state.showCreateCommentForm
@@ -84,7 +81,6 @@ class App extends Component {
 	}
 
 	render() {
-
 		return (
 			<div className="container">
 				<h4>This site is used to demonstrate functionality of a comment system. There is a video below to show how users may use comments to interact with a video post. You may view documentation&nbsp;
@@ -109,7 +105,6 @@ class App extends Component {
 			</div>
 		);
 	}
-
 }
 
 export default App;

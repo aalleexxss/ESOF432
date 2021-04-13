@@ -5,7 +5,8 @@ import AddReply from "./AddReply";
 import ApiService from "./apiService";
 import Replies from "./Replies";
 import EditComment from "./EditComment"
-import Swal from "emittery";
+import Button from "react-bootstrap/Button";
+// import Swal from "emittery";
 
 class Comment extends Component {
 
@@ -47,7 +48,6 @@ class Comment extends Component {
       this.props.fetchComments()
       this.toggleShowEditForm()
     })
-
   }
 
   toggleShowReplyForm = () => {
@@ -76,7 +76,9 @@ class Comment extends Component {
         }
       }
     }
+
     this.setState({r:rep})
+
   }
 
   deleteReplies = (comment_id) => {
@@ -92,7 +94,6 @@ class Comment extends Component {
         this.fetchReplies()
       })
   }
-
 
   render() {
     return (
@@ -112,8 +113,8 @@ class Comment extends Component {
             onClick={this.toggleShowReplyForm}>
             {this.state.showReplyForm ? 'Cancel' : 'Reply'}
           </button>
-          <button className="btn-info float-left btn-sm" style={{fontSize: '18px'}}
-                  onClick={() => this.props.addLike(this.props.refinedComments.id)}>Likes: {this.props.refinedComments.likes}</button>
+          <Button className="btn-info float-left" style={{fontSize: '18px'}}
+                  onClick={() => this.props.addLike(this.props.refinedComments.id)} variant="info">Likes: {this.props.refinedComments.likes}</Button>{' '}
           <button className="btn btn-danger delete float-right btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.deleteComment(this.props.refinedComments.id)}>Delete
           </button>
@@ -130,4 +131,5 @@ class Comment extends Component {
     )
   }
 }
+
 export default Comment
