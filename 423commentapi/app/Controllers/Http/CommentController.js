@@ -116,7 +116,8 @@ class CommentController{
       poster_name,
       id,
       created_at,
-      updated_at
+      updated_at,
+      date
 
     } = request.all()
 
@@ -130,7 +131,8 @@ class CommentController{
       poster_name,
       id,
       created_at,
-      updated_at
+      updated_at,
+      date
     })
 
     return response.status(201).json({ comment })

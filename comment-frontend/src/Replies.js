@@ -39,7 +39,7 @@ class Replies extends Component {
           <div className="cf">
             <img src={profile} alt="pic" className="pic"/>
             <h2 className="card-title">{this.props.r.poster_name}</h2>
-            <p2 className="card-title">{this.props.r.created_at}</p2>
+            <p2 className="card-title">{this.props.r.date}</p2>
           </div>
           <h4 className="card-title">{this.props.r.body}</h4>
           <button className="btn-info btn-sm" style={{fontSize: '18px'}}

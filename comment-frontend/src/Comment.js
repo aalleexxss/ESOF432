@@ -100,9 +100,11 @@ class Comment extends Component {
           <div className="cf">
             <img src={profile} alt="pic" className="pic"/>
             <h2 className="card-title">{this.props.refinedComments.poster_name}</h2>
-            <p className="card-title">{this.props.refinedComments.created_at}</p>
+            <p className="card-title">{this.props.refinedComments.date}</p>
           </div>
-          <h4 className="card-title">{this.props.refinedComments.body}</h4>
+          <div className={"text"}>
+          <h4 className="card-title body">{this.props.refinedComments.body}</h4>
+          </div>
           <button
             className={`btn ${this.state.showReplyForm ? 'btn-danger two' : 'btn-warning'}`}
             onClick={this.toggleShowReplyForm}>
@@ -110,12 +112,13 @@ class Comment extends Component {
           </button>
           <button className="btn-info float-left btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.addLike(this.props.refinedComments.id)}>Likes: {this.props.refinedComments.likes}</button>
-          <button className="btn btn-danger float-right btn-sm" style={{fontSize: '18px'}}
+          <button className="btn btn-danger delete float-right btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.deleteComment(this.props.refinedComments.id)}>Delete
           </button>
           <button className={`btn ${this.state.showEditForm ? 'btn-danger four' : 'btn-primary'}`} onClick={this.toggleShowEditForm}>
             {this.state.showEditForm ? 'Cancel' : 'Edit'}
           </button>
+
         </div>
       </div>
         {this.state.showEditForm && <EditComment userInfo={this.props.refinedComments} storeEdit={this.storeEdit}/>}
