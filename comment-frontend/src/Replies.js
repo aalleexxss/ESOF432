@@ -41,7 +41,7 @@ class Replies extends Component {
             <p2 className="card-title">{this.props.r.date}</p2>
           </div>
           <h4 className="card-title">{this.props.r.body}</h4>
-          <button className="btn-info btn-sm" style={{fontSize: '18px'}}
+          <button className="btn-info likes btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.addLike(this.props.r.id)}>Likes: {this.props.r.likes}</button>
           <button className="btn btn-danger float-right btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.deleteReplies(this.props.r.id)}>Delete
