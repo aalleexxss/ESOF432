@@ -266,7 +266,7 @@ h5{
     top: 9px;
     left: 5px;
     font-style: italic;
-    font-size: 8.6px !important;
+    font-size: 7px !important;
   }
 
   .btn-info.likes{
@@ -348,4 +348,35 @@ h5{
     box-shadow: 2px 2px #00008B;
     border-radius: .25rem;
   }
+}
+
+@media only screen and (max-width: 376px) {
+
+  .btn-primary{
+    position: relative;
+    left: 3px;
+    width: 20%;
+    margin-right: 10px;
+    box-shadow: 2px 2px #003e80;
+    border-radius: .25rem;
+  }
+
+  .btn-danger.delete{
+    padding-left: 0px;
+    font-size: 13px !important;
+    top:10px;
+    width: 40px;
+    box-shadow: 2px 2px #6c131c;
+    border-radius: .25rem;
+  }
+
+  .btn-primary.two{
+    position: relative;
+    left: 0px;
+    margin-right: 10px;
+    padding-left: 9px;
+    box-shadow: 2px 2px #00008B;
+    border-radius: .25rem;
+  }
+
 }
