@@ -13,6 +13,28 @@ body {
   color: #f5f8fa;
 }
 
+.dark-mode-comments {
+  background-color:  #bfbfbf !important;
+}
+
+.dark-mode-replies {
+  background-color: #8c8c8c !important;
+}
+
+.dark-mode-delete-text{
+  background-color: red !important;
+  color: white !important;
+}
+
+.react-confirm-alert-overlay{
+background: rgba(192,192,192,0.85) !important;
+}
+
+.react-confirm-alert-body{
+  background-color: white !important;
+  color: black !important;
+}
+
 .dark{
 margin-left: 10px;
 }
@@ -249,6 +271,12 @@ p2{
   color: red;
 }
 
+
+.react-confirm-alert-button-group button{
+  width: 100% !important;
+  height: 40px;
+}
+
 @media only screen and (max-width: 420px) {
   
   .card-title {
@@ -358,9 +386,27 @@ p2{
     width: 100%;
   }
 
+  .react-confirm-alert-body{
+    width: 100% !important;
+  }
+
+  .react-confirm-alert-button-group button{
+    width: 100% !important;
+    height: 50px;
+  }
+
 }
 
 @media only screen and (max-width: 376px) {
+
+  .react-confirm-alert-body{
+    width: 100% !important;
+  }
+
+  .react-confirm-alert-button-group button{
+    width: 100% !important;
+    height: 50px;
+  }
 
   .btn-primary{
     padding-left: 9px;

@@ -77,7 +77,16 @@ class App extends Component {
 
 	 darkMode = () => {
 		var background = document.body;
+		 var comments = document.getElementsByClassName("card my-3");
+		 var replies = document.getElementsByClassName("card my-34");
 		 background.classList.toggle("dark-mode");
+
+		 for (var i = 0; i < comments.length; i++) {
+			 comments[i].classList.toggle("dark-mode-comments");
+		 }
+		 for (var j = 0; j < replies.length; j++) {
+			 replies[j].classList.toggle("dark-mode-replies");
+		 }
 	}
 
 	render() {
