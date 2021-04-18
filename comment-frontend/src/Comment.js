@@ -6,6 +6,8 @@ import ApiService from "./apiService";
 import Replies from "./Replies";
 import EditComment from "./EditComment"
 import Button from "react-bootstrap/Button";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 // import Swal from "emittery";
 
 class Comment extends Component {
@@ -95,6 +97,22 @@ class Comment extends Component {
       })
   }
 
+  submit = () => {
+    confirmAlert({
+      title: 'Confirm delete',
+      message: 'Are you sure you want to delete this comment?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => this.props.deleteComment(this.props.refinedComments.id)
+        },
+        {
+          label: 'No',
+        }
+      ]
+    });
+  }
+
   render() {
     return (
       <div className="container comments">
@@ -116,7 +134,8 @@ class Comment extends Component {
           <Button className="btn-info float-left" style={{fontSize: '18px'}}
                   onClick={() => this.props.addLike(this.props.refinedComments.id)} variant="info">Likes: {this.props.refinedComments.likes}</Button>{' '}
           <button className="btn btn-danger delete float-right btn-sm" style={{fontSize: '18px'}}
-                  onClick={() => this.props.deleteComment(this.props.refinedComments.id)}>Delete
+              onClick={this.submit}
+          >Delete
           </button>
           <button className={`btn ${this.state.showEditForm ? 'btn-danger four' : 'btn-primary'}`} onClick={this.toggleShowEditForm}>
             {this.state.showEditForm ? 'Cancel' : 'Edit'}
