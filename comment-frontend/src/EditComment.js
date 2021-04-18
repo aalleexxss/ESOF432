@@ -48,7 +48,8 @@ class EditComment extends Component {
   }
 
   handleKeypress = (e) => {
-    if (e.keyCode === 13) {
+    if(e.keyCode === 13 && e.shiftKey)
+    {
       this.createEdit()
     }
   };

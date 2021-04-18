@@ -40,7 +40,7 @@ class Replies extends Component {
             <h2 className="card-title">{this.props.r.poster_name}</h2>
             <p2 className="card-title">{this.props.r.date}</p2>
           </div>
-          <h4 className="card-title">{this.props.r.body}</h4>
+          <h4 className="card-title body">{this.props.r.body}</h4>
           <button className="btn-info likes btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.addLike(this.props.r.id)}>Likes: {this.props.r.likes}</button>
           <button className="btn btn-danger float-right btn-sm" style={{fontSize: '18px'}}

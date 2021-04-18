@@ -1,0 +1,6 @@
+{
+  "testFiles": "**/*.{feature,features}",
+  "projectId": "racs8y",
+  "defaultCommandTimeout": 60000,
+  "chromeWebSecurity": false
+}
