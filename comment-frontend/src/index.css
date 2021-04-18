@@ -141,6 +141,20 @@ h4 {
 h2{
   text-decoration: underline;
 }
+
+h7{
+  color: red;
+  text-align: left;
+}
+
+h5{
+  text-align: right;
+  margin-right: 40px;
+  margin-top: 6px;
+  font-weight: 550;
+  font-size: 17px;
+}
+
 .card{
   width:75%;
   display: block;
@@ -192,20 +206,16 @@ h2{
   position: relative;
 }
 
+.card-title.body{
+  white-space: pre-wrap !important;
+}
+
 .form-control.body{
-
   height: 100px;
-
 }
 
 .form-control.reply{
-
   height: 100px;
-
-}
-
-.card-body.small{
-
 }
 
 .cf.edits{
@@ -233,14 +243,6 @@ p2{
   font-size: 18px;
 }
 
-h5{
-  text-align: right;
-  margin-right: 40px;
-  margin-top: 6px;
-  font-weight: 550;
-  font-size: 17px;
-}
-
 .error{
   font-weight: bold;
   font-size: 13px;
@@ -266,7 +268,7 @@ h5{
     top: 9px;
     left: 5px;
     font-style: italic;
-    font-size: 8.6px !important;
+    font-size: 7px !important;
   }
 
   .btn-info.likes{
@@ -348,4 +350,55 @@ h5{
     box-shadow: 2px 2px #00008B;
     border-radius: .25rem;
   }
+  h7{
+      font-size: 0px;
+  }
+
+  .btn-success{
+    width: 100%;
+  }
+
+}
+
+@media only screen and (max-width: 376px) {
+
+  .btn-primary{
+    padding-left: 9px;
+    position: relative;
+    left: 0px;
+    width: 17%;
+    margin-right: 10px;
+    box-shadow: 2px 2px #003e80;
+    border-radius: .25rem;
+  }
+
+  .btn-danger.four{
+    left: 40px;
+    padding-left: 1px;
+    font-size: 11px !important;
+    top:10px;
+    width: 40px;
+    box-shadow: 2px 2px #6c131c;
+    border-radius: .25rem;
+  }
+
+  .btn-danger.delete{
+    padding-left: 0px;
+    font-size: 13px !important;
+    top:10px;
+    width: 40px;
+    box-shadow: 2px 2px #6c131c;
+    border-radius: .25rem;
+  }
+
+  .btn-primary.two{
+    padding-left: 6px !important;
+    position: relative;
+    left: 0px;
+    margin-right: 10px;
+    padding-left: 9px;
+    box-shadow: 2px 2px #00008B;
+    border-radius: .25rem;
+  }
+
 }
