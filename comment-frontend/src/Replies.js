@@ -3,6 +3,7 @@ import './index.css'
 import profile from "./profile.png";
 import EditComment from "./EditComment";
 import ApiService from "./apiService";
+import {confirmAlert} from "react-confirm-alert";
 
 
 
@@ -30,6 +31,22 @@ class Replies extends Component {
     })
   }
 
+  submit = () => {
+    confirmAlert({
+      title: 'Confirm delete',
+      message: 'Are you sure you want to delete this reply?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => this.props.deleteReplies(this.props.r.id)
+        },
+        {
+          label: 'No',
+        }
+      ]
+    });
+  }
+
   render() {
     return (
     <div className="container replies">
@@ -44,7 +61,7 @@ class Replies extends Component {
           <button className="btn-info likes btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.addLike(this.props.r.id)}>Likes: {this.props.r.likes}</button>
           <button className="btn btn-danger float-right btn-sm" style={{fontSize: '18px'}}
-                  onClick={() => this.props.deleteReplies(this.props.r.id)}>Delete
+                  onClick={this.submit}>Delete
           </button>
           <button className={`btn ${this.state.showEditForm ? 'btn-danger three' : 'btn-primary two'}`} onClick={this.toggleShowEditForm}>
             {this.state.showEditForm ? 'Cancel' : 'Edit'}
