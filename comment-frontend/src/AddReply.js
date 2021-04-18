@@ -42,7 +42,7 @@ class AddReply extends Component {
 
     if(body === ""){
       formIsValid = false;
-      errors["body"] = "Cannot be empty";
+      errors["body"] = "Cannot be empty ";
     }
     this.setState({errors: errors});
     return formIsValid;
@@ -55,7 +55,9 @@ class AddReply extends Component {
   }
 
   handleKeypress = (e) => {
-    if (e.keyCode === 13) {
+
+    if(e.keyCode === 13 && e.shiftKey)
+    {
       this.createReply()
     }
   };
@@ -66,13 +68,15 @@ class AddReply extends Component {
         <div className="row replies">
           <div className="col-md-6 offset-md-3 replies">
             <h4 className="text-center mb-5">Add a Reply</h4>
+
             <div className="form-group two">
               <label>
-                <input name="poster_name" onChange={this.handleFieldChange} type="text" className="form-control" placeholder="Name" />
+                <input name="poster_name" onChange={this.handleFieldChange} onKeyDown={this.handleKeypress} type="text" className="form-control" placeholder="Name" />
                 <span className="error">{this.state.errors["poster_name"]}</span>
               </label>
               <textarea name="body" onChange={this.handleFieldChange} onKeyDown={this.handleKeypress} type="text" className="form-control reply" placeholder="Body" />
               <span className="error">{this.state.errors["body"]}</span>
+              <h7>Press Enter + Shift to quick submit reply</h7>
             </div>
             <div className="form-group text-center">
               <button onClick={this.createReply} style={{float: "right", marginBottom: 10}}  className="btn btn-success">Post Reply</button>
