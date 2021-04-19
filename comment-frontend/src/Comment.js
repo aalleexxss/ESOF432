@@ -7,8 +7,6 @@ import Replies from "./Replies";
 import EditComment from "./EditComment"
 import Button from "react-bootstrap/Button";
 import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css';
-// import Swal from "emittery";
 
 class Comment extends Component {
 
@@ -108,6 +106,7 @@ class Comment extends Component {
         },
         {
           label: 'No',
+          onClick: () => ""
         }
       ]
     });
@@ -140,7 +139,6 @@ class Comment extends Component {
           <button className={`btn ${this.state.showEditForm ? 'btn-danger four' : 'btn-primary'}`} onClick={this.toggleShowEditForm}>
             {this.state.showEditForm ? 'Cancel' : 'Edit'}
           </button>
-
         </div>
       </div>
         {this.state.showEditForm && <EditComment userInfo={this.props.refinedComments} storeEdit={this.storeEdit}/>}
