@@ -13,6 +13,7 @@
     "react": "^17.0.1",
     "react-avatar": "^3.10.0",
     "react-bootstrap": "^1.5.2",
+    "react-confirm-alert": "^2.7.0",
     "react-dark-mode-toggle": "^0.2.0",
     "react-dom": "^17.0.1",
     "react-flatpickr": "^3.6.4",
@@ -21,7 +22,9 @@
     "react-player": "^2.9.0",
     "react-scripts": "^4.0.3",
     "sweetalert": "^2.1.2",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "emittery": "^0.7.2",
+    "reactstrap": "^8.9.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,9 +42,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "cypress": "^7.1.0",
-    "emittery": "^0.7.2",
-    "react-confirm-alert": "^2.7.0",
-    "reactstrap": "^8.9.0"
+    "cypress": "^7.1.0"
   }
 }
