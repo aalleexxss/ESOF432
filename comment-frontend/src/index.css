@@ -17,6 +17,10 @@ body {
   background-color:  #bfbfbf !important;
 }
 
+.dark-mode-comments-new {
+  background-color:  #bfbfbf !important;
+}
+
 .dark-mode-replies {
   background-color: #8c8c8c !important;
 }
@@ -207,6 +211,7 @@ h5{
 }
 
 .card.my-3{
+  background: white;
   color: black;
   width: auto;
 }

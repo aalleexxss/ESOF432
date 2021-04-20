@@ -12,6 +12,8 @@ class App extends Component {
 		comments: [],
     refinedComments: [],
 		showCreateCommentForm: false,
+		makeNewCommentsDark: false,
+		c : 0
 	};
 
 	constructor(props) {
@@ -34,15 +36,25 @@ class App extends Component {
         c.push(comments[i])
       }
     }
-
 	  this.setState({refinedComments: c})
-
+	  var newComments = document.getElementsByClassName("card my-3");
+	  if(this.state.makeNewCommentsDark === true && newComments.length > this.state.c)
+	  {
+		  newComments[newComments.length - 1].classList.toggle("dark-mode-comments");
+	  }
+	  this.setState({
+		  c : newComments.length
+	  });
   }
 
 	fetchComments = () =>
 		this.apiService.getComments().then(({ data }) => {
 			this.setState({
         comments: data.comments
+			});
+			var newComments = document.getElementsByClassName("card my-3");
+			this.setState({
+				c : newComments.length
 			});
       this.refineComments(this.state.comments)
     });
@@ -60,6 +72,10 @@ class App extends Component {
       .then(() => {
         this.fetchComments()
       })
+	  var newComments = document.getElementsByClassName("card my-3");
+	  this.setState({
+		  c : newComments.length
+	  });
   }
 
   addLike = (comment_id) => {
@@ -76,13 +92,21 @@ class App extends Component {
 	};
 
 	 darkMode = () => {
-		var background = document.body;
+		 var background = document.body;
 		 var comments = document.getElementsByClassName("card my-3");
 		 var replies = document.getElementsByClassName("card my-34");
+
+		 this.setState({
+			 makeNewCommentsDark: !this.state.makeNewCommentsDark,
+			 c : comments.length
+		 });
+
+
 		 background.classList.toggle("dark-mode");
 
 		 for (var i = 0; i < comments.length; i++) {
-			 comments[i].classList.toggle("dark-mode-comments");
+				comments[i].classList.toggle("dark-mode-comments");
+
 		 }
 		 for (var j = 0; j < replies.length; j++) {
 			 replies[j].classList.toggle("dark-mode-replies");
@@ -111,7 +135,7 @@ class App extends Component {
 					<Button className={"dark"} onClick={this.darkMode} variant="secondary">Toggle dark mode</Button>{' '}
 				</div>
 				{this.state.showCreateCommentForm && <AddComment storeComment={this.storeComment} users={this.state.users} />}
-				{this.state.refinedComments.map((refinedComments) => <Comment deleteComment={this.deleteComment} addLike={this.addLike} refinedComments={refinedComments} fetchComments={this.fetchComments} key={refinedComments.comment_id}/>)}
+				{this.state.refinedComments.map((refinedComments) => <Comment makeNewCommentsDark={this.state.makeNewCommentsDark}deleteComment={this.deleteComment} addLike={this.addLike} refinedComments={refinedComments} fetchComments={this.fetchComments} key={refinedComments.comment_id}/>)}
 			</div>
 		);
 	}
