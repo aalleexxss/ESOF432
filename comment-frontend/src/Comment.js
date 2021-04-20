@@ -7,8 +7,6 @@ import Replies from "./Replies";
 import EditComment from "./EditComment"
 import Button from "react-bootstrap/Button";
 import { confirmAlert } from 'react-confirm-alert';
-import 'react-confirm-alert/src/react-confirm-alert.css';
-// import Swal from "emittery";
 
 class Comment extends Component {
 
@@ -18,7 +16,12 @@ class Comment extends Component {
     //r is sorted replies... I think
     r: [],
     showReplyForm: false,
-    showEditForm: false
+    showEditForm: false,
+
+    showLikes: false,
+    showReply: false,
+    showEdit: false,
+    showDelete: false
   };
 
   constructor(props) {
@@ -54,13 +57,19 @@ class Comment extends Component {
 
   toggleShowReplyForm = () => {
     this.setState({
-      showReplyForm: !this.state.showReplyForm
+      showReplyForm: !this.state.showReplyForm,
+      showEdit: !this.state.showEdit,
+      showLikes: !this.state.showLikes,
+      showDelete: !this.state.showDelete
     });
   };
 
   toggleShowEditForm = () => {
     this.setState({
-      showEditForm: !this.state.showEditForm
+      showEditForm: !this.state.showEditForm,
+      showReply: !this.state.showReply,
+      showLikes: !this.state.showLikes,
+      showDelete: !this.state.showDelete
     });
   };
 
@@ -108,6 +117,7 @@ class Comment extends Component {
         },
         {
           label: 'No',
+          onClick: () => ""
         }
       ]
     });
@@ -126,25 +136,24 @@ class Comment extends Component {
           <div className={"text"}>
           <h4 className="card-title body">{this.props.refinedComments.body}</h4>
           </div>
-          <button
+          <button disabled={this.state.showReply}
             className={`btn ${this.state.showReplyForm ? 'btn-danger two' : 'btn-warning'}`}
-            onClick={this.toggleShowReplyForm}>
+            onClick={() => {this.toggleShowReplyForm();}}>
             {this.state.showReplyForm ? 'Cancel' : 'Reply'}
           </button>
-          <Button className="btn-info float-left" style={{fontSize: '18px'}}
+          <Button disabled={this.state.showLikes} className="btn-info float-left" style={{fontSize: '18px'}}
                   onClick={() => this.props.addLike(this.props.refinedComments.id)} variant="info">Likes: {this.props.refinedComments.likes}</Button>{' '}
-          <button className="btn btn-danger delete float-right btn-sm" style={{fontSize: '18px'}}
+          <button disabled={this.state.showDelete} className="btn btn-danger delete float-right btn-sm" style={{fontSize: '18px'}}
               onClick={this.submit}
           >Delete
           </button>
-          <button className={`btn ${this.state.showEditForm ? 'btn-danger four' : 'btn-primary'}`} onClick={this.toggleShowEditForm}>
-            {this.state.showEditForm ? 'Cancel' : 'Edit'}
+          <button disabled={this.state.showEdit} className={'btn btn-primary'} onClick={this.toggleShowEditForm}>
+            Edit
           </button>
-
         </div>
       </div>
-        {this.state.showEditForm && <EditComment userInfo={this.props.refinedComments} storeEdit={this.storeEdit}/>}
-        {this.state.showReplyForm && <AddReply storeReply={this.storeReply}  parentCommentId={this.props.refinedComments.comment_id}/>}
+        {this.state.showEditForm && <EditComment cancelButton={this.toggleShowEditForm}  userInfo={this.props.refinedComments} storeEdit={this.storeEdit}/>}
+        {this.state.showReplyForm && <AddReply storeReply={this.storeReply} parentCommentId={this.props.refinedComments.comment_id}/>}
         {this.state.r.map((r) => <Replies deleteReplies={this.deleteReplies} fetchReplies={this.fetchReplies} addLike={this.addLike} r={r} key={r.comment_id}/>)}
       </div>
     )

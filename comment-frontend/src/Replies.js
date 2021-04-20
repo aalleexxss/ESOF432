@@ -10,7 +10,10 @@ import {confirmAlert} from "react-confirm-alert";
 class Replies extends Component {
 
   state = {
-    showEditForm: false
+    showEditForm: false,
+    showLikes: false,
+    showEdit: false,
+    showDelete: false
   }
 
   constructor(props) {
@@ -20,7 +23,9 @@ class Replies extends Component {
 
   toggleShowEditForm = () => {
     this.setState({
-      showEditForm: !this.state.showEditForm
+      showEditForm: !this.state.showEditForm,
+      showLikes: !this.state.showLikes,
+      showDelete: !this.state.showDelete
     });
   };
 
@@ -58,17 +63,17 @@ class Replies extends Component {
             <p2 className="card-title">{this.props.r.date}</p2>
           </div>
           <h4 className="card-title body">{this.props.r.body}</h4>
-          <button className="btn-info likes btn-sm" style={{fontSize: '18px'}}
+          <button disabled={this.state.showLikes} className="btn-info likes btn-sm" style={{fontSize: '18px'}}
                   onClick={() => this.props.addLike(this.props.r.id)}>Likes: {this.props.r.likes}</button>
-          <button className="btn btn-danger float-right btn-sm" style={{fontSize: '18px'}}
+          <button disabled={this.state.showDelete} className="btn btn-danger float-right btn-sm" style={{fontSize: '18px'}}
                   onClick={this.submit}>Delete
           </button>
-          <button className={`btn ${this.state.showEditForm ? 'btn-danger three' : 'btn-primary two'}`} onClick={this.toggleShowEditForm}>
-            {this.state.showEditForm ? 'Cancel' : 'Edit'}
-          </button>
+          <button disabled={this.state.showEdit} className={'btn btn-primary two'} onClick={this.toggleShowEditForm}>
+            Edit
+        </button>
         </div>
       </div>
-      {this.state.showEditForm && <EditComment userInfo={this.props.r} storeEdit={this.storeEdit}/>}
+      {this.state.showEditForm && <EditComment cancelButton={this.toggleShowEditForm} userInfo={this.props.r} storeEdit={this.storeEdit}/>}
     </div>
     )
   }
