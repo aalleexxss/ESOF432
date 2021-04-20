@@ -21,12 +21,14 @@ class Comment extends Component {
     showLikes: false,
     showReply: false,
     showEdit: false,
-    showDelete: false
+    showDelete: false,
+    c : 0
   };
 
   constructor(props) {
     super(props);
     this.apiService = new ApiService();
+
   }
 
   fetchReplies = () =>
@@ -34,8 +36,13 @@ class Comment extends Component {
       this.setState({
         replies: data.comments
       });
+      var newReplies = document.getElementsByClassName("card my-34");
+      this.setState({
+        c : newReplies.length
+      });
       this.findReplies()
     });
+
 
   componentWillMount() {
     this.fetchReplies();
@@ -87,9 +94,13 @@ class Comment extends Component {
         }
       }
     }
-
     this.setState({r:rep})
+    var newReplies = document.getElementsByClassName("card my-34");
 
+    if(this.props.makeNewCommentsDark === true && newReplies.length > this.state.c)
+    {
+      newReplies[newReplies.length - 1].classList.toggle("dark-mode-replies");
+    }
   }
 
   deleteReplies = (comment_id) => {
@@ -122,6 +133,8 @@ class Comment extends Component {
       ]
     });
   }
+
+
 
   render() {
     return (
