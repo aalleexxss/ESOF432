@@ -19,7 +19,7 @@ class AddReply extends Component {
     id: '',
     created_at: '',
     updated_at: '',
-    date: Date().toLocaleString(),
+    date: (Date().toLocaleString()).substring(0, 28),
     errors: {}
   }
 
@@ -68,7 +68,6 @@ class AddReply extends Component {
         <div className="row replies">
           <div className="col-md-6 offset-md-3 replies">
             <h4 className="text-center mb-5">Add a Reply</h4>
-
             <div className="form-group two">
               <label>
                 <input name="poster_name" onChange={this.handleFieldChange} onKeyDown={this.handleKeypress} type="text" className="form-control" placeholder="Name" />
