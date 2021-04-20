@@ -17,7 +17,7 @@ class AddComment extends Component {
     id: '',
     created_at: '',
     updated_at: '',
-    date: Date().toLocaleString(),
+    date: (Date().toLocaleString()).substring(0, 28),
     errors: {}
   }
 
@@ -53,7 +53,6 @@ class AddComment extends Component {
   }
 
   handleKeypress = (e) => {
-
     if(e.keyCode === 13 && e.shiftKey)
     {
       this.createComment()

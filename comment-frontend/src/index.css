@@ -21,13 +21,8 @@ body {
   background-color: #8c8c8c !important;
 }
 
-.dark-mode-delete-text{
-  background-color: red !important;
-  color: white !important;
-}
-
 .react-confirm-alert-overlay{
-background: rgba(192,192,192,0.85) !important;
+background: rgba(0, 0, 0, 0.6) !important;
 }
 
 .react-confirm-alert-body{
@@ -60,6 +55,15 @@ margin-left: 10px;
   right: 25px;
   top: 4px;
   box-shadow: 2px 2px  #003e80;
+  border-radius: .25rem;
+}
+
+.btn-success.edit{
+  width: 25%;
+  margin-left: 50px;
+  font-weight: bold;
+  margin-top: 4px;
+  box-shadow: 2px 2px  #0f3e19;
   border-radius: .25rem;
 }
 
@@ -107,13 +111,14 @@ margin-left: 10px;
 }
 
 .btn-danger.four{
-  position: relative;
-  float:right;
-  bottom: 60px;
-  left: 74px;
+  width: 13%;
+  left: 0px;
+  font-weight: bold;
+  float: left!important;
+  text-align: center;
+  margin: auto;
   box-shadow: 2px 2px #6c131c;
   border-radius: .25rem;
-  font-weight: bold;
 }
 
 .btn-warning{
@@ -206,6 +211,11 @@ h5{
   width: auto;
 }
 
+.card.my-3.edits{
+background: #333333;
+  color: white;
+}
+
 .pic{
   margin-top: 5px;
   margin-right: 8px;
@@ -216,7 +226,7 @@ h5{
 
 .card-body.edits{
   z-index: 10 !important;
-  background-color: #BC8F8F !important;
+  background-color: #333333 !important;
 }
 
 .edit-box{
@@ -271,14 +281,24 @@ p2{
   color: red;
 }
 
-
 .react-confirm-alert-button-group button{
   width: 100% !important;
   height: 40px;
 }
 
 @media only screen and (max-width: 420px) {
-  
+
+  .modal-container {
+    width: 100% !important;
+  }
+
+  .btn-success.edit{
+    width: 50%;
+    margin-left: 50px;
+    font-weight: bold;
+    margin-top: 4px;
+  }
+
   .card-title {
     width: 100%;
   }
@@ -288,7 +308,7 @@ p2{
     top: 9px;
     left: 5px;
     font-style: italic;
-    font-size: 11px !important;
+    font-size: 16px !important;
   }
 
   p2{
@@ -296,7 +316,7 @@ p2{
     top: 9px;
     left: 5px;
     font-style: italic;
-    font-size: 7px !important;
+    font-size: 14px !important;
   }
 
   .btn-info.likes{
@@ -354,13 +374,13 @@ p2{
   }
 
   .btn-danger.four{
-    width: 67px;
-    left: 68px;
+    width: 25%;
+    left: 0px;
+    float: left!important;
     text-align: center;
     margin: auto;
     box-shadow: 2px 2px #6c131c;
     border-radius: .25rem;
-    padding-left: 7px;
   }
 
   .btn-primary{
@@ -399,54 +419,101 @@ p2{
 
 @media only screen and (max-width: 376px) {
 
-  .react-confirm-alert-body{
-    width: 100% !important;
+  .react-confirm-alert{
+    width: 93% !important;
   }
 
-  .react-confirm-alert-button-group button{
-    width: 100% !important;
-    height: 50px;
+  .btn-success.edit{
+    padding-left: 7px;
   }
 
   .btn-primary{
-    padding-left: 9px;
+    padding-left: 12px;
     position: relative;
-    left: 0px;
-    width: 17%;
-    margin-right: 10px;
+    width: 19%;
+    right: 60px;
     box-shadow: 2px 2px #003e80;
-    border-radius: .25rem;
-  }
-
-  .btn-danger.four{
-    left: 40px;
-    padding-left: 1px;
-    font-size: 11px !important;
-    top:10px;
-    width: 40px;
-    box-shadow: 2px 2px #6c131c;
     border-radius: .25rem;
   }
 
   .btn-danger.delete{
     padding-left: 0px;
-    font-size: 13px !important;
-    top:10px;
-    width: 40px;
+    top:4px;
+    width: 57px;
     box-shadow: 2px 2px #6c131c;
     border-radius: .25rem;
   }
 
+  .btn-danger{
+    padding-left: 0px;
+    top:4px;
+    width: 57px;
+    box-shadow: 2px 2px #6c131c;
+    border-radius: .25rem;
+  }
+
+  .btn-danger.two{
+    right: 4px;
+    margin-left: 0px;
+    width: 70px;
+    padding-left: 8px
+  }
+
+  .btn-danger.four{
+    padding-left: 8px;
+  }
+
   .btn-primary.two{
-    padding-left: 6px !important;
     position: relative;
     left: 0px;
+    width: 20%;
     margin-right: 10px;
     padding-left: 9px;
     box-shadow: 2px 2px #00008B;
     border-radius: .25rem;
   }
 
+  .btn-warning{
+    right: 4px;
+    margin-left: 0px;
+  }
+
+  .btn-info{
+    right: 15px;
+  }
+
+  .btn-info.two{
+    right: 0px;
+  }
+}
+
+.modal-container {
+  margin: auto;
+  width: 50%;
+  position: relative;
+}
+
+.modal {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 99;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  opacity: 0;
+  -webkit-animation: react-confirm-alert-fadeIn 0.5s 0.2s forwards;
+  -moz-animation: react-confirm-alert-fadeIn 0.5s 0.2s forwards;
+  -o-animation: react-confirm-alert-fadeIn 0.5s 0.2s forwards;
+  animation: react-confirm-alert-fadeIn 0.5s 0.2s forwards;
 }
 
 body.react-confirm-alert-body-element {
@@ -483,7 +550,7 @@ body.react-confirm-alert-body-element {
 }
 
 .react-confirm-alert-body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Raleway", sans-serif;
   width: 400px;
   padding: 30px;
   text-align: left;
