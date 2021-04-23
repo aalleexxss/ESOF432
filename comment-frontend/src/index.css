@@ -349,7 +349,7 @@ p2{
   .btn-danger{
     width: 68px;
   }
-  
+
   .btn-danger.delete{
     padding-left: 6px;
     top:4px;
@@ -390,7 +390,7 @@ p2{
 
   .btn-primary{
     position: relative;
-    left: 3px;
+    right: 5px;
     margin-right: 10px;
     box-shadow: 2px 2px #003e80;
     border-radius: .25rem;
@@ -398,9 +398,9 @@ p2{
 
   .btn-primary.two{
     position: relative;
-    left: 0px;
+    right: 5px;
     margin-right: 10px;
-    box-shadow: 2px 2px #00008B;
+    box-shadow: 2px 2px #003e80;
     border-radius: .25rem;
   }
   h7{

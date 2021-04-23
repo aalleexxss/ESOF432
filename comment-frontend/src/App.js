@@ -101,7 +101,6 @@ class App extends Component {
 			 c : comments.length
 		 });
 
-
 		 background.classList.toggle("dark-mode");
 
 		 for (var i = 0; i < comments.length; i++) {
