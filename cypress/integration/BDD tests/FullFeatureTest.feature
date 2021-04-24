@@ -49,6 +49,11 @@ Scenario: User can delete a comment
     When I click the link
     Then I am at documentation
 
+  Scenario: User can navigate to the Cypress Dashboard
+    Given I want to see Cypress Dashboard
+    When I click the cypress link
+    Then I am at the dashboard
+
   Scenario: User can use dark mode
     Given I click dark mode
     Then The site will be in dark mode
