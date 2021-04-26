@@ -77,16 +77,26 @@ class App extends Component {
 
 	 darkMode = () => {
 		var background = document.body;
+		 var comments = document.getElementsByClassName("card my-3");
+		 var replies = document.getElementsByClassName("card my-34");
 		 background.classList.toggle("dark-mode");
+
+		 for (var i = 0; i < comments.length; i++) {
+			 comments[i].classList.toggle("dark-mode-comments");
+		 }
+		 for (var j = 0; j < replies.length; j++) {
+			 replies[j].classList.toggle("dark-mode-replies");
+		 }
 	}
 
 	render() {
 		return (
 			<div className="container">
-				<h4>This site is used to demonstrate functionality of a comment system. There is a video below to show how users may use comments to interact with a video post. You may view documentation&nbsp;
-					<a href="https://backend-309717.wm.r.appspot.com/docs/">here</a>
-				</h4>
-				<br/>
+				<h3> <u> PLEASE READ! - </u> </h3>
+				<h4>- This site is being used to demonstrate the <u>backend</u> functionality of a comment api.</h4>
+				<h4>- Backend functionality includes: Posting a comment, editing a comment, liking a comment, and deleting a comment. </h4>
+				<h4>- The video below is a placeholder to show how users can interact with a post using comments.</h4>
+				<h4>- Documentation may be viewed&nbsp;<a href="https://backend-309717.wm.r.appspot.com/docs/">here</a></h4>
 				<br/>
 				<div className={"vid_container"}>
 					<iframe title={"Vid"} width="420" height="315" src="https://www.youtube.com/embed/EL-D9LrFJd4" frameBorder="0" allowFullScreen></iframe>

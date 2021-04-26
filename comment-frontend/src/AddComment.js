@@ -17,7 +17,7 @@ class AddComment extends Component {
     id: '',
     created_at: '',
     updated_at: '',
-    date: Date().toLocaleString(),
+    date: (Date().toLocaleString()).substring(0, 28),
     errors: {}
   }
 
@@ -40,7 +40,7 @@ class AddComment extends Component {
 
     if(body === ""){
       formIsValid = false;
-      errors["body"] = "Cannot be empty";
+      errors["body"] = "Cannot be empty ";
     }
     this.setState({errors: errors});
     return formIsValid;
@@ -52,6 +52,13 @@ class AddComment extends Component {
     }
   }
 
+  handleKeypress = (e) => {
+    if(e.keyCode === 13 && e.shiftKey)
+    {
+      this.createComment()
+    }
+  };
+
   render() {
     return (
       <div className="container">
@@ -60,11 +67,12 @@ class AddComment extends Component {
             <h4 className="text-center mb-5">Add new Comment</h4>
             <div className="form-group">
               <label>
-                <input name="poster_name" onChange={this.handleFieldChange} type="text" className="form-control" placeholder="Name"/>
+                <input name="poster_name" onChange={this.handleFieldChange} onKeyDown={this.handleKeypress} type="text" className="form-control" placeholder="Name"/>
                 <span className="error">{this.state.errors["poster_name"]}</span>
               </label>
-              <textarea name="body" onChange={this.handleFieldChange} type="text" className="form-control body" placeholder="Body"/>
+              <textarea cols={"40"} rows={"5"} name="body" onChange={this.handleFieldChange} onKeyDown={this.handleKeypress} type="text" className="form-control body" placeholder="Body"/>
               <span className="error">{this.state.errors["body"]}</span>
+              <h7>Press Enter + Shift to quick submit comment</h7>
             </div>
               <button className="btn btn-success" style={{float: "right"}} onClick={this.createComment}>Post Comment</button>
           </div>
