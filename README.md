@@ -14,9 +14,10 @@ delete previous comments, edit comments, and like comments to do so. Our API is:
 Adonis js was used to create this API backend. Adonis is a Node.js framework that is great for building scalable
 apps. If you would like to contribute to this project, find more information in our developer documentation
 [here](https://github.com/aalleexxss/ESOF432/blob/master/dev-doc.md). If you would like to use this API in a site
-of your own, find more information in our user documentation [here](https://github.com/aalleexxss/ESOF432/blob/master/user-doc.md).
-
-
+of your own, find more information in our user documentation [here](https://github.com/aalleexxss/ESOF432/blob/master/user-doc.md). 
+Additionally, a simple frontend is provided in the [comment-frontend](https://github.com/aalleexxss/ESOF432/tree/dev/comment-frontend) 
+directory. This frontend was made using react and is meant to be an example on how our backend could be implemented
+into a frontend. The full site can be found at [http://acommentapi.com](http://acommentapi.com/).
 
 
  
