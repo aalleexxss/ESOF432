@@ -15,7 +15,7 @@ This directory stores all the configuration files of our API. For more informati
 the overall directory structure of Adonis applications, see Adonis documentation [here](https://adonisjs.com/docs/4.1/folder-structure).
 
 ## UML Diagram and Design Decisions
-![UML diagram](https://github.com/aalleexxss/ESOF432/blob/Alex-Branch/UML.png)
+![UML diagram](https://github.com/aalleexxss/ESOF432/blob/32ff6dcd2328bb58292481925a20b79346c2840a/UML.png)
 Our API uses the model view controller pattern as depicted in the above diagram. The view aspect of this API is 
 a simple frontend created with react. The controller is the commentController class which gets requests from the 
 view, and sends commands to the model. The model then stores or alters a database and returns data to the controller
