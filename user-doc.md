@@ -12,7 +12,7 @@ In order to install adonis using npm, use `npm i @adonisjs/cli`. If npm is not i
 **starting adonis.js:**\
 clone [this repository](https://github.com/aalleexxss/ESOF432.git). Move into the /423commentapi directory and run `adonis serve --dev`. The api is now up and running.
 If there is an error, run ````npm install````. This should fix the majority of problems, if it does not, see
-[adonis documentation](https://adonisjs.com/docs/4.1/installation).
+[adonis documentation](https://adonisjs.com/docs/4.1/installation).\
 **communicating with our API:**\
 Our API communicates through http request. Responses are given as JSON responses. To see all http requests that our API 
 accepts, see our swagger documentation [here](https://backend-309717.wm.r.appspot.com/docs/). For more information about 

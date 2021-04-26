@@ -17,6 +17,10 @@ body {
   background-color:  #bfbfbf !important;
 }
 
+.dark-mode-comments-new {
+  background-color:  #bfbfbf !important;
+}
+
 .dark-mode-replies {
   background-color: #8c8c8c !important;
 }
@@ -108,6 +112,9 @@ margin-left: 10px;
   box-shadow: 2px 2px #6c131c;
   border-radius: .25rem;
   font-weight: bold;
+}
+
+.btn-danger.delete{
 }
 
 .btn-danger.four{
@@ -207,6 +214,7 @@ h5{
 }
 
 .card.my-3{
+  background: white;
   color: black;
   width: auto;
 }
@@ -321,6 +329,7 @@ p2{
 
   .btn-info.likes{
     top: 3.5px;
+    right: 0px;
     position: relative;
     box-shadow: 2px 2px #0e6471;
     border-radius: .25rem;
@@ -331,9 +340,14 @@ p2{
     text-align: center;
   }
 
+  .btn-info{
+    right: 10px;
+  }
+
   .btn-warning{
     top: 4px;
     margin-left: 10px;
+    right: 10px;
     font-weight: bold;
     text-align: center;
     position: relative;
@@ -344,7 +358,7 @@ p2{
   .btn-danger{
     width: 68px;
   }
-  
+
   .btn-danger.delete{
     padding-left: 6px;
     top:4px;
@@ -385,17 +399,16 @@ p2{
 
   .btn-primary{
     position: relative;
-    left: 3px;
-    margin-right: 10px;
+    right: 10px;
     box-shadow: 2px 2px #003e80;
     border-radius: .25rem;
   }
 
   .btn-primary.two{
     position: relative;
-    left: 0px;
+    right: 5px;
     margin-right: 10px;
-    box-shadow: 2px 2px #00008B;
+    box-shadow: 2px 2px #003e80;
     border-radius: .25rem;
   }
   h7{
@@ -428,16 +441,28 @@ p2{
   }
 
   .btn-primary{
-    padding-left: 12px;
+    padding-left: 7px;
     position: relative;
-    width: 19%;
-    right: 60px;
+    width: 15%;
+    right: 0px;
+    margin-right: 0px;
     box-shadow: 2px 2px #003e80;
+    border-radius: .25rem;
+  }
+
+  .btn-primary.two{
+    position: relative;
+    left: 0px;
+    width: 20%;
+    margin-right: 10px;
+    padding-left: 9px;
+    box-shadow: 2px 2px #00008B;
     border-radius: .25rem;
   }
 
   .btn-danger.delete{
     padding-left: 0px;
+    left: 12px;
     top:4px;
     width: 57px;
     box-shadow: 2px 2px #6c131c;
@@ -453,7 +478,7 @@ p2{
   }
 
   .btn-danger.two{
-    right: 4px;
+    right: 10px;
     margin-left: 0px;
     width: 70px;
     padding-left: 8px
@@ -463,27 +488,44 @@ p2{
     padding-left: 8px;
   }
 
-  .btn-primary.two{
-    position: relative;
-    left: 0px;
-    width: 20%;
-    margin-right: 10px;
-    padding-left: 9px;
-    box-shadow: 2px 2px #00008B;
-    border-radius: .25rem;
-  }
-
   .btn-warning{
-    right: 4px;
+    right: 10px;
     margin-left: 0px;
   }
 
   .btn-info{
-    right: 15px;
+    right: 18px;
   }
 
   .btn-info.two{
     right: 0px;
+  }
+}
+
+@media only screen and (max-width: 361px) {
+  .btn-primary{
+    padding-left: 5px;
+    position: relative;
+    width: 14%;
+    right: 0px;
+    margin-right: 0px;
+    box-shadow: 2px 2px #003e80;
+    border-radius: .25rem;
+  }
+
+  .btn-danger.delete{
+    padding-left: 0px;
+    font-size: 17px !important;
+    left: 17px;
+    top:4px;
+    width: 49px;
+    box-shadow: 2px 2px #6c131c;
+    border-radius: .25rem;
+  }
+
+  .dark.btn.btn-secondary{
+    margin-right: 9px!important;
+    margin-top: 5px;
   }
 }
 
