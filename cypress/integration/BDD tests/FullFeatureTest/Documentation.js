@@ -11,7 +11,8 @@ Given('I want to see documentation', () => {
 
 When('I click the link', () => {
 
-    cy.get("a:contains(here)").should('have.attr', 'href').then((href) => {
+    cy.get("div.dropdown.btn-group").click()
+    cy.get("a:contains(Documentation)").should('have.attr', 'href').then((href) => {
         cy.forceVisit(href)
     })
 })
